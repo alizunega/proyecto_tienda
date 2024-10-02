@@ -2,32 +2,32 @@
     "productos": [
         {
             "id": 1,
-            "titulo": "",
-            "description": "",
+            "titulo": "Cuadro 20x20",
+            "description": "sarasa",
             "src": "./assets/productos/cuadro_chico.jpg"
         },
         {
             "id": 2,
-            "titulo": "",
-            "description": "",
+            "titulo": "Cuadro 20x20 Girasoles",
+            "description": "sarasa",
             "src": "./assets/productos/cuadro_girasoles.jpg"
         },
         {
             "id": 3,
-            "titulo": "",
-            "description": "",
-            "src": "./assets/productos/cuadro_grande.jpg"
+            "titulo": "Cuadro 1.40x0.80",
+            "description": "cuadro gigante que llevo un pedo hacer",
+            "src": "./assets/productos/cuadro_grande2.jpg"
         },
         {
             "id": 4,
-            "titulo": "",
-            "description": "",
+            "titulo": "Cuadro 30x30",
+            "description": "sarasa",
             "src": "./assets/productos/cuadro_medio.JPG"
         },
         {
             "id": 5,
-            "titulo": "",
-            "description": "",
+            "titulo": "Cuadro 40x30",
+            "description": "sarasa",
             "src": "./assets/productos/cuadro_mediogr.jpg"
         }
     ]

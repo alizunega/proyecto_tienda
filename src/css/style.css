@@ -84,16 +84,40 @@ a {
 
 /* Fin Estilos header */
 /* Estilos grilla productos */
+
+.main {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    align-items: center;
+    font-family: var(--font-texto);
+}
+
 .container {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 1em;
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 3em;
+    justify-content: center;
+}
+
+.card img {
+    width: 20em;
     padding: 1em;
+    height: auto;
 }
 
 .card {
     background-color: #d9afd9;
-    padding: 1em;
+    flex-basis: 60%;
+    margin: .8em;
+    padding: .6em .9em;
+    height: auto;
+}
+
+.main h1 {
+    display: inline-flex;
+    align-self: center;
 }
 
 
@@ -129,9 +153,17 @@ a {
 
 /* Fin Estilos footer */
 
+/* Estilos para medianos */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .card {
+        flex-basis: 45%;
+        /* Mostrar 3 items por fila en dispositivos medianos */
+    }
+}
+
 
 /* estilos para desktop */
-@media (min-width: 980px) {
+@media (min-width: 1025px) {
     .header--list {
         display: flex;
         justify-content: space-between;
@@ -151,17 +183,24 @@ a {
         display: inline;
     }
 
+    .card {
+        flex-basis: 30%;
+    }
 
     /* .header--img-logo {
         width: 10rem;
     } */
 
+    /* Estilos grilla productos */
+
+
+
     .footer {
         display: flex;
         flex-flow: row nowrap;
         justify-content: space-evenly;
-        height: 5em;
-
+        height: auto;
+        padding-top: 1em;
     }
 
     .acciones--item span {
