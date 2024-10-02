@@ -1,0 +1,129 @@
+@import url('https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,400..900;1,400..900&family=Amaranth:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+/* DEFINICION DE VARIABLES */
+:root {
+    --color-background: linear-gradient(180deg,
+            #d9afd9 0%,
+            #ffffff 33%,
+            #97d9e1 66%,
+            #ffffff 100%);
+    --color-background-cajas: #c0d0d7ec;
+    --color-background-cards: radial-gradient(circle farthest-corner at 54.5% 94.8%, rgba(227, 250, 251, .7) 0.4%, rgba(226, 241, 233, .8) 28.4%, rgba(198, 231, 215, .5) 58.4%, rgba(245, 237, 253, .9) 90%);
+
+    --color-background-footer: #203754ae;
+    --color-background-header: rgb(129, 131, 187);
+    --color-buttons: rgba(136, 136, 251, 0.88);
+    --color-buttons-hover: #49316d;
+    --color-fonts: #4c4b4b;
+    --font-titulo: "Amaranth", sans-serif;
+    --font-texto: "Alegreya", serif;
+    --font-size_titulo: 1rem;
+    --font-size_texto: .8rem;
+}
+
+/* FIN DE DEFINICION DE VARIABLES */
+
+/* ESTILOS DE LA PAGINA */
+html,
+body {
+    margin: 0;
+    padding: 0;
+    line-height: 1.5;
+    min-height: 100dvh;
+    min-width: 100dvw;
+    overflow-x: hidden;
+    font-family: var(--font-texto);
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    margin: 0;
+    padding: 0;
+}
+
+/* Estilos header */
+.header {
+    background-color: var(--color-background-header);
+    font-family: var(--font-titulo);
+
+}
+
+.header--list {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.header--img-logo {
+    width: 10rem;
+    top: 0;
+    left: 0;
+}
+
+.header--img-add {
+    width: 3rem;
+    margin-right: 2em;
+    padding-right: 1rem;
+}
+
+
+/* formato footer */
+.footer {
+    background-color: var(--color-background-header);
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-evenly;
+    align-items: center;
+    font-family: var(--font-titulo);
+    height: auto;
+    bottom: 0;
+    position: fixed;
+    width: 100dvw;
+}
+
+.footer--redes-list {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.footer--redes-item {
+    margin: 0 0.8em;
+    align-self: center;
+}
+
+.icono--footer {
+    width: 2.3em;
+}
+
+
+/* estilos para desktop */
+@media (min-width: 980px) {
+    .header--list {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .header h1 {
+        display: block;
+    }
+
+    .header--img-logo {
+        width: 13rem;
+    }
+
+    .footer {
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: space-evenly;
+        height: 5em;
+    }
+
+
+
+}
