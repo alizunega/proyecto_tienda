@@ -10,15 +10,15 @@
     --color-background-cajas: #c0d0d7ec;
     --color-background-cards: radial-gradient(circle farthest-corner at 54.5% 94.8%, rgba(227, 250, 251, .7) 0.4%, rgba(226, 241, 233, .8) 28.4%, rgba(198, 231, 215, .5) 58.4%, rgba(245, 237, 253, .9) 90%);
 
-    --color-background-footer: #203754ae;
-    --color-background-header: rgb(129, 131, 187);
+    --color-background-footer: #5a4a94fe;
+    --color-background-header: rgb(0, 0, 0);
     --color-buttons: rgba(136, 136, 251, 0.88);
     --color-buttons-hover: #49316d;
     --color-fonts: #4c4b4b;
     --font-titulo: "Amaranth", sans-serif;
     --font-texto: "Alegreya", serif;
     --font-size_titulo: 1rem;
-    --font-size_texto: .8rem;
+    --font-size_texto: clamp(1rem, 2vw+1rem, 3rem);
 }
 
 /* FIN DE DEFINICION DE VARIABLES */
@@ -50,31 +50,57 @@ a {
 .header {
     background-color: var(--color-background-header);
     font-family: var(--font-titulo);
-
 }
 
 .header--list {
     display: flex;
     flex-direction: row;
     align-items: center;
+    justify-content: space-between;
 }
 
 .header--img-logo {
-    width: 10rem;
+    width: 8rem;
     top: 0;
     left: 0;
 }
 
-.header--img-add {
-    width: 3rem;
-    margin-right: 2em;
-    padding-right: 1rem;
+.header--img {
+    width: 1rem;
+}
+
+.acciones--lista {
+    display: flex;
+    flex-direction: row;
+    padding: .7em;
+    gap: .2em;
+}
+
+.acciones--item {
+    border: solid .08em rgb(255, 255, 255);
+    padding: .4em .2em;
+    margin: .8em auto;
+}
+
+/* Fin Estilos header */
+/* Estilos grilla productos */
+.container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1em;
+    padding: 1em;
+}
+
+.card {
+    background-color: #d9afd9;
+    padding: 1em;
 }
 
 
-/* formato footer */
+/* Fin Estilos grilla productos */
+/* Estilos footer */
 .footer {
-    background-color: var(--color-background-header);
+    background-color: var(--color-background-footer);
     display: flex;
     flex-flow: column nowrap;
     justify-content: space-evenly;
@@ -98,8 +124,10 @@ a {
 }
 
 .icono--footer {
-    width: 2.3em;
+    width: 2em;
 }
+
+/* Fin Estilos footer */
 
 
 /* estilos para desktop */
@@ -107,23 +135,38 @@ a {
     .header--list {
         display: flex;
         justify-content: space-between;
+        color: white;
     }
 
     .header h1 {
         display: block;
+        color: white;
     }
 
-    .header--img-logo {
-        width: 13rem;
+    #search-item {
+        display: inline;
     }
+
+    #botonBuscar {
+        display: inline;
+    }
+
+
+    /* .header--img-logo {
+        width: 10rem;
+    } */
 
     .footer {
         display: flex;
         flex-flow: row nowrap;
         justify-content: space-evenly;
         height: 5em;
+
     }
 
+    .acciones--item span {
+        display: inline;
+    }
 
 
 }

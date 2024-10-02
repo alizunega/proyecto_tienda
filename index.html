@@ -13,9 +13,19 @@
 <body>
     <header class="header">
         <div class="header--list">
-            <img src="./assets/img/logoValen.PNG" alt="Imagen Logo" class="header--img-logo">
-            <h1 hidden>Tienda de Pinturas</h1>
-            <img src="./assets/iconos/add_item.png" alt="Icono agregar producto" class="header--img-add">
+            <img src="./assets/img/logo1.png" alt="Imagen Logo" class="header--img-logo">
+            <h1 hidden>Espacio de Arte</h1>
+            <ul class="acciones--lista">
+                <li class="acciones--item">
+                    <input type="search" name="q" id="search-item" placeholder="Buscar item" hidden>
+                    <img src="./assets/iconos/search.svg" alt="Icono busqueda" class="header--img" id="botonBuscar">
+                </li>
+                <li class="acciones--item">
+                    <span hidden>Agregar Item</span>
+                    <img src="./assets/iconos/add_item.png" alt="Icono agregar producto" class="header--img"
+                        id="addProducto">
+                </li>
+            </ul>
         </div>
     </header>
     <main>
@@ -37,8 +47,9 @@
             </li>
         </ul>
     </footer>
-
+    
     <script src="./src/js/main.js"></script>
+    <script src=""></script>
 </body>
 
 </html>
