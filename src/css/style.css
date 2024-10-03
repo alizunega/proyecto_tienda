@@ -10,15 +10,28 @@
     --color-background-cajas: #c0d0d7ec;
     --color-background-cards: radial-gradient(circle farthest-corner at 54.5% 94.8%, rgba(227, 250, 251, .7) 0.4%, rgba(226, 241, 233, .8) 28.4%, rgba(198, 231, 215, .5) 58.4%, rgba(245, 237, 253, .9) 90%);
 
-    --color-background-footer: #5a4a94fe;
+    --color-background-footer: #917ce2fe;
     --color-background-header: rgb(0, 0, 0);
-    --color-buttons: rgba(136, 136, 251, 0.88);
+    --color-buttons: rgb(146, 146, 218);
     --color-buttons-hover: #49316d;
     --color-fonts: #4c4b4b;
     --font-titulo: "Amaranth", sans-serif;
     --font-texto: "Alegreya", serif;
     --font-size_titulo: 1rem;
     --font-size_texto: clamp(1rem, 2vw+1rem, 3rem);
+}
+
+/* quita botones de +/- en input tipo number */
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    appearance: none;
+    margin: 0;
+}
+
+input[type=number] {
+    -moz-appearance: textfield;
+    appearance: textfield;
 }
 
 /* FIN DE DEFINICION DE VARIABLES */
@@ -122,6 +135,39 @@ a {
 
 
 /* Fin Estilos grilla productos */
+
+/* Estilos formulario productos */
+form[data-form] {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    margin: 3em auto;
+    padding: .4em 1em;
+    border: #4c4b4b 2px solid;
+    background-color: var(--color-background-footer);
+}
+
+form[data-form] img {
+    width: 4em;
+
+}
+
+form[data-form] input {
+    display: flex;
+    width: 30em;
+}
+
+form[data-form] button {
+    background-color: var(--color-buttons);
+    display: flex;
+    align-self: center;
+    width: 13em;
+    margin-top: 2em;
+    padding: .6em .9em;
+}
+
+/* Fin Estilos formulario productos */
+
 /* Estilos footer */
 .footer {
     background-color: var(--color-background-footer);
@@ -192,6 +238,21 @@ a {
     } */
 
     /* Estilos grilla productos */
+
+    form[data-form] {
+        display: flex;
+        flex-direction: column;
+        width: 50%;
+        margin: 3em auto;
+        padding: .4em 1em;
+        border: #4c4b4b 2px solid;
+        background-color: rgba(147, 133, 238, 0.872);
+    }
+
+    form[data-form] img {
+        width: 3em;
+    }
+
 
 
 
