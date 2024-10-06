@@ -34,14 +34,28 @@
 
         </section>
 
+        <!-- formulario carga de productos -->
         <section class="formulario" hidden>
-            <form action="" data-form>
-                <label for="name"></label>
-                <input type="text" name="name" id="name">
-                <label for="price"></label>
-                <input type="number" name="price" id="price">
-                <label for="image"></label>
-                <input type="text" name="image" id="image">
+            <h1>Nuevo Producto</h1>
+            <form action="" id="form" data-form>
+                <ul class="form--list">
+                    <li class="form--item">
+                        <label for="name"><img src="../assets/iconos/tag_descrip.png" alt="Nombre producto"></label>
+                        <input type="text" name="name" id="name" placeholder="Nombre producto" autocomplete="name">
+                    </li>
+                    <li class="form--item">
+                        <label for="price"><img src="../assets/iconos/price.png" alt="Precio producto"></label>
+                        <input type="number" name="price" id="price" placeholder="100.00" autocomplete="price">
+                    </li>
+                    <li class="form--item">
+                        <label for="image"><img src="../assets/iconos/imageico.png" alt="Url imagen"></label>
+                        <input type="text" name="image" id="image" placeholder="url imagen" autocomplete="image">
+                    </li>
+                </ul>
+                <div class="buttons_section">
+                    <button type="submit" class="add">Agregar</button>
+                    <button type="button" class="clean">Limpiar</button>
+                </div>
             </form>
         </section>
 
