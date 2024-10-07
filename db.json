@@ -227,6 +227,30 @@
       "price": "790",
       "image": "https://celadasa.vtexassets.com/arquivos/ids/384174-1200-auto?v=638631298541430000&width=1200&height=auto&aspect=true",
       "id": 38
+    },
+    {
+      "name": "Zapatillas Hombre Nike Air Uptempo '96",
+      "price": "789.6",
+      "image": "https://celadasa.vtexassets.com/arquivos/ids/383942-1600-auto?v=638631276096970000&width=1600&height=auto&aspect=true",
+      "id": 39
+    },
+    {
+      "name": "Zapatillas Adidas Originals Superstar",
+      "price": "350",
+      "image": "https://www.tripstore.com.ar/media/catalog/product/cache/4769e4d9f3516e60f2b4303f8e5014a8/G/W/GW5920_0_23.jpg",
+      "id": 40
+    },
+    {
+      "name": "Zapatillas Jordan Air 3 Retro de Mujer",
+      "price": "456",
+      "image": "https://essential.vtexassets.com/arquivos/ids/1423628-1200-auto?v=638491767750830000&width=1200&height=auto&aspect=true",
+      "id": 41
+    },
+    {
+      "name": "Zapatillas adidas originals Court Super",
+      "price": "789.45",
+      "image": "https://s3.sa-east-1.amazonaws.com/www.vaypol.com.ar/variants/082iywogvxaxl9018fm3hrfkn9ch/77e513bcd3762f47919c96f85e400038a39acdbb0d268f51c1fd98fe5327bd96",
+      "id": 42
     }
   ]
 }

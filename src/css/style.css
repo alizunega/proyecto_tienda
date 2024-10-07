@@ -77,6 +77,12 @@ a {
     justify-content: space-between;
 }
 
+
+.header--list-form {
+    display: flex;
+    padding-right: .7em;
+}
+
 .header--img-logo {
     width: 8rem;
     top: 0;
@@ -85,6 +91,11 @@ a {
 
 .header--img {
     width: 1rem;
+}
+
+.volver_pagina {
+    width: 3rem;
+    position: relative;
 }
 
 .acciones--lista {
@@ -112,13 +123,27 @@ a {
     font-family: var(--font-texto);
     position: relative;
     top: 8em;
+    padding-bottom: 3em;
+    flex-grow: 1;
+
+}
+
+.main__felicitacion {
+    background-color: #7f67a1ac;
+    height: 100dvh;
+    padding-top: 2em;
+    margin-bottom: 0;
+}
+
+.main__formulario {
+    padding: 0;
 }
 
 .container {
     display: flex;
     flex-wrap: wrap;
-    margin-bottom: 3em;
     justify-content: center;
+    height: 100%;
 }
 
 .card {
@@ -127,14 +152,31 @@ a {
     margin: .8em auto;
     padding: .6em .9em;
     height: auto;
-    border-radius: .6em;
-    text-align: center;
+    border-radius: .4em;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
 }
+
+.card--footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 60%;
+    font-size: 1.2em;
+}
+
 
 .card img {
     width: 20em;
     padding: .2em;
     height: auto;
+}
+
+.card--footer .delete {
+    width: 2em;
+    text-align: right;
 }
 
 .main h1 {
@@ -145,18 +187,13 @@ a {
 
 /* Fin Estilos grilla productos */
 
-/* Estilos formulario productos */
+/* Estilos formulario carga productos */
 .formulario {
-    /* display: inline; */
-    text-align: center;
-    position: fixed;
+    display: flex;
+    flex-direction: column;
     top: 8em;
-    left: 8%;
-    background-color: #5c6bf5;
-    opacity: .94;
-    z-index: 11;
-    width: 80%;
-    padding: 2%;
+    width: 100%;
+    height: 100dvh;
 }
 
 .formulario h1 {
@@ -171,44 +208,42 @@ a {
     display: flex;
     padding: .4em .7em;
     flex-direction: column;
+    justify-content: space-between;
     width: 100%;
     border-radius: .6em;
+    height: auto;
 }
 
 #form img {
     width: 2em;
 }
 
-/* form[data-form] input {
-    display: flex;
-    width: 50%;
-} */
 
 .form--list {
     display: flex;
     justify-content: space-between;
     flex-direction: column;
-    /* justify-content: space-evenly; */
     width: 100%;
     gap: 1em;
-    padding: .4em;
-    margin: .5em;
+    align-items: baseline;
+    align-content: center;
 }
 
 .form--item {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    padding: .6em .5em;
-
+    padding: .6em .7em;
+    width: 100%;
 }
 
 .form--item input {
-    width: 90%;
-    padding: .7em;
+    width: 100%;
+    padding: .5em;
     height: 2.5em;
     text-align: right;
 }
+
 
 
 #form button {
@@ -216,9 +251,9 @@ a {
     display: flex;
     justify-content: center;
     align-self: center;
-    width: 8em;
+    width: 5em;
     margin-top: .2em;
-    padding: .5em 1em;
+    padding: .4em .7em;
     border-radius: .3em;
 }
 
@@ -228,7 +263,7 @@ a {
     gap: 1em;
     align-self: center;
     text-align: center;
-    font-size: 1.2em;
+    font-size: 1.1em;
     font-weight: bold;
 }
 
@@ -272,6 +307,32 @@ a {
         flex-basis: 45%;
         /* Mostrar 3 items por fila en dispositivos medianos */
     }
+
+    #form {
+        width: 80%;
+        margin: 1em auto;
+        padding: .6em 1em;
+        align-items: center;
+    }
+
+    #form img {
+        width: 2.5em;
+    }
+
+    .form--item input {
+        width: 100%;
+        padding-left: 1em;
+        height: 3em;
+        text-align: right;
+    }
+
+    #form button {
+
+        width: 6em;
+        margin-top: .2em;
+        padding: .3em .6em;
+        border-radius: .3em;
+    }
 }
 
 
@@ -304,24 +365,11 @@ a {
         width: 10rem;
     } */
 
-    /* Estilos formulario carga productos */
-    .formulario {
-        /* display: inline; */
-        text-align: center;
-        position: fixed;
-        top: 8em;
-        left: 8%;
-    }
 
     #form {
-        border: #4c4b4b 1px solid;
-        background-color: black;
-        display: flex;
-        flex-direction: column;
         width: 70%;
         margin: 1em auto;
         padding: .6em 1em;
-
     }
 
     #form img {
@@ -339,9 +387,9 @@ a {
     }
 
     .form--item {
-        display: flex;
-        flex-direction: row;
+        justify-content: space-around;
         padding: 1em 1.5em;
+        width: 100%;
 
     }
 
@@ -352,12 +400,30 @@ a {
     }
 
     .form--item input {
-        width: 80%;
+        width: 100%;
         padding-left: 1em;
         height: 3em;
         text-align: right;
     }
 
+    #form button {
+        width: 8em;
+        margin-top: .2em;
+        padding: 1em 1.2em;
+        border-radius: .3em;
+    }
+
+    .buttons_section {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        justify-content: space-around;
+        gap: 3em;
+        align-self: center;
+        text-align: center;
+        font-size: 1.2em;
+        font-weight: bold;
+    }
 
     /* Estilos footer  */
     .footer {

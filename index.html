@@ -21,9 +21,11 @@
                     <img src="./assets/iconos/search.svg" alt="Icono busqueda" class="header--img" id="botonBuscar">
                 </li>
                 <li class="acciones--item">
-                    <span hidden>Agregar Item</span>
-                    <img src="./assets/iconos/add_item.png" alt="Icono agregar producto" class="header--img"
-                        id="addProducto">
+                    <a href="./pages/formulario.html">
+                        <span hidden>Agregar Item</span>
+                        <img src="./assets/iconos/add_item.png" alt="Icono agregar producto" class="header--img"
+                            id="addProducto"></a>
+
                 </li>
             </ul>
         </div>
@@ -31,34 +33,7 @@
     <main class="main">
         <h1>Mis productos</h1>
         <section class="container">
-
         </section>
-
-        <!-- formulario carga de productos -->
-        <section class="formulario" hidden>
-            <h1>Nuevo Producto</h1>
-            <form action="" id="form" data-form>
-                <ul class="form--list">
-                    <li class="form--item">
-                        <label for="name"><img src="../assets/iconos/tag_descrip.png" alt="Nombre producto"></label>
-                        <input type="text" name="name" id="name" placeholder="Nombre producto" autocomplete="name">
-                    </li>
-                    <li class="form--item">
-                        <label for="price"><img src="../assets/iconos/price.png" alt="Precio producto"></label>
-                        <input type="number" name="price" id="price" placeholder="100.00" autocomplete="price">
-                    </li>
-                    <li class="form--item">
-                        <label for="image"><img src="../assets/iconos/imageico.png" alt="Url imagen"></label>
-                        <input type="text" name="image" id="image" placeholder="url imagen" autocomplete="image">
-                    </li>
-                </ul>
-                <div class="buttons_section">
-                    <button type="submit" class="add">Agregar</button>
-                    <button type="button" class="clean">Limpiar</button>
-                </div>
-            </form>
-        </section>
-
     </main>
     <footer class="footer">
         <span>&copy; 2024 - Desarrollado por Alicia</span>
@@ -77,8 +52,8 @@
         </ul>
     </footer>
 
-    <script src="./src/js/main.js"></script>
-    <script src="./src/js/productos.js" type="module"></script>
+    <script src="./src/js/main.js" defer></script>
+    <script src="./src/js/productos.js" type="module" defer></script>
 </body>
 
 </html>

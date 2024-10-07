@@ -4,14 +4,54 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+    <link rel="stylesheet" href="../src/css/reset.css">
+    <link rel="stylesheet" href="../src/css/style.css">
     <title>WellDone</title>
 </head>
 
 <body>
-    <h1>¡Producto agregado satisfactoriamente!</h1>
-    <button>Volver a pagina principal</button>
-    <button>Agregar otro producto</button>
+    <header class="header">
+        <div class="header--list">
+            <img src="../assets/img/logo_sinfondo.png" alt="Imagen Logo" class="header--img-logo">
+            <h1 hidden>Tienda de Calzado</h1>
+        </div>
+    </header>
+
+    <main class="main main__felicitacion">
+        <div class="saludo">
+            <h1>¡Producto agregado satisfactoriamente!</h1>
+            <img src="../assets/iconos/added.png" alt="">
+        </div>
+        <div class="buttons__saludo">
+            <a href="../index.html"><img src="../assets/iconos/volver_pagina.png" alt="Volver a pagina principal">Volver
+                a
+                pagina principal</a>
+            <a href="../pages/formulario.html">
+                <img src="../assets/iconos/add_item.png" alt="Agregar producto">
+                Agregar otro producto
+            </a>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <span>&copy; 2024 - Desarrollado por Alicia</span>
+        <ul class="footer--redes-list">
+            <li class="footer--redes-item">
+                <a href="mailto:ali.zunega@gmail.com" target="_blank">
+                    <img src="../assets/iconos/envelope-solid.svg" alt="Icono enviar Mail" class="icono--footer">
+                </a>
+            </li>
+            <li class="footer--redes-item">
+                <a aria-label="Chat a Telegram" href="https://t.me/AlitaZ16" target="_blank">
+                    <img alt="Icono chat a telegram" src="../assets/iconos/telegram-brands-solid.svg"
+                        class="icono--footer">
+                </a>
+            </li>
+        </ul>
+    </footer>
+
+    <script src="../src/js/main.js"></script>
+    <script src="../src/js/productos.js" type="module"></script>
 
 </body>
 
