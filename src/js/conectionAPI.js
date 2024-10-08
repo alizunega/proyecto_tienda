@@ -31,7 +31,29 @@ async function addProduct(name, price, image) {
   return productoJSON;
 }
 
+// Función para realizar la solicitud DELETE
+async function deleteItem(id) {
+  try {
+    const response = await fetch(url + `/${id}`, {
+      method: "DELETE",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+
+    // Comprobar si la solicitud fue exitosa
+    if (response.ok) {
+      alert(`Elemento con ID ${id} eliminado con éxito`);
+    } else {
+      alert(`Error ${response.status}: ${response.statusText}`);
+    }
+  } catch (error) {
+    alert("Hubo un error con la solicitud:", error);
+  }
+}
+
 export const conectionAPI = {
   conexionAPI,
   addProduct,
+  deleteItem,
 };

@@ -10,6 +10,7 @@ if (section) {
   listaAPI.forEach((element) => {
     let card = document.createElement("div");
     card.className = "card";
+    card.dataset.id = element.id;
     let cardFooter = document.createElement("div");
     cardFooter.className = "card--footer";
     let titulo = document.createElement("h1");
@@ -87,13 +88,34 @@ function isValidFormData(nombre, precio, imagen) {
   return nombre && precio && imagen;
 }
 
+// comprueba si elformato de precio ingresado es correcto
 function precioValido(precio) {
   if (!isNaN(precio) && precio > 0) {
     return true;
   }
 }
+// comprueba si la url de imagen tiene formato correcto
 function isValidUrl(url) {
   const regex =
     /^(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?$/;
   return regex.test(url);
 }
+
+//eliminacion del producto
+
+document.querySelectorAll(".card").forEach((e) => {
+  const eliminar = e.querySelector(".delete");
+  eliminar.addEventListener("click", async () => {
+    const idProd = e.dataset.id;
+    console.log(idProd);
+    const indLista = listaAPI.findIndex(
+      (producto) => producto.id === parseInt(idProd)
+    );
+    console.log(indLista);
+    if (indLista !== -1) {
+      await conectionAPI.deleteItem(idProd);
+      listaAPI.splice(idProd, 1);
+      e.remove();
+    }
+  });
+});
