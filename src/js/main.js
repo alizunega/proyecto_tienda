@@ -1,11 +1,11 @@
 // muestra caja de input cuando presiono el boton/imagen de lupa
+const botonBuscar = document.getElementById("botonBuscar");
 function mostrarInput() {
-  let input = document.getElementById("search-item");
-  input.style.display = "flex";
+  const inputBusqueda = document.getElementById("search-item");
+  inputBusqueda.style.display = "flex";
   botonBuscar.style.display = "none";
 }
 
-const botonBuscar = document.getElementById("botonBuscar");
 if (botonBuscar) {
   botonBuscar.addEventListener("click", mostrarInput);
 }

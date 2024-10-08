@@ -147,7 +147,7 @@ a {
 }
 
 .card {
-    background-color: #896c89;
+    background-color: #ae9dae;
     flex-basis: 60%;
     margin: .8em auto;
     padding: .6em .9em;
@@ -247,7 +247,7 @@ a {
 
 
 #form button {
-    background-color: var(--color-buttons);
+    background-color: rgb(139, 139, 245);
     display: flex;
     justify-content: center;
     align-self: center;

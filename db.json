@@ -145,12 +145,6 @@
       "image": "https://imgcentauro-a.akamaihd.net/230x230/95939145.jpg"
     },
     {
-      "id": 25,
-      "name": "Tenis Fila Recovery",
-      "price": 259.99,
-      "image": "https://imgcentauro-a.akamaihd.net/230x230/95326905.jpg"
-    },
-    {
       "id": 26,
       "name": "Tenis Asics Patriot 12",
       "price": 199.99,
@@ -239,12 +233,6 @@
       "price": "350",
       "image": "https://www.tripstore.com.ar/media/catalog/product/cache/4769e4d9f3516e60f2b4303f8e5014a8/G/W/GW5920_0_23.jpg",
       "id": 40
-    },
-    {
-      "name": "Zapatillas Jordan Air 3 Retro de Mujer",
-      "price": "456",
-      "image": "https://essential.vtexassets.com/arquivos/ids/1423628-1200-auto?v=638491767750830000&width=1200&height=auto&aspect=true",
-      "id": 41
     }
   ]
 }

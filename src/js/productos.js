@@ -1,41 +1,41 @@
 import { conectionAPI } from "./conectionAPI.js";
 
-let listaAPI = await conectionAPI.conexionAPI();
+const listaAPI = await conectionAPI.conexionAPI();
 
-let section = document.querySelector(".container");
+const section = document.querySelector(".container");
 
 console.log(listaAPI);
 
-if (section) {
-  listaAPI.forEach((element) => {
-    let card = document.createElement("div");
-    card.className = "card";
-    card.dataset.id = element.id;
-    let cardFooter = document.createElement("div");
-    cardFooter.className = "card--footer";
-    let titulo = document.createElement("h1");
-    titulo.textContent = `${element.name}`;
-    let descripcion = document.createElement("p");
-    descripcion.textContent = `$ ${element.price}`;
-    let imagen = document.createElement("img");
-    imagen.src = `${element.image}`;
-    let buttonDel = document.createElement("img");
-    buttonDel.src = "../../assets/iconos/trash-can-regular.svg";
-    buttonDel.alt = "Eliminar Item";
-    buttonDel.className = "delete";
-    card.appendChild(imagen);
-    card.appendChild(titulo);
-    cardFooter.appendChild(descripcion);
-    cardFooter.appendChild(buttonDel);
-    card.appendChild(cardFooter);
-    section.appendChild(card);
-  });
-}
+renderizarItems(listaAPI);
 
-// funcionalidad para eliminar item
-const divDescrip = document.querySelector(".delete");
-if (divDescrip) {
-  divDescrip.addEventListener("click", () => {});
+function renderizarItems(lista) {
+  if (section && lista.length > 0) {
+    lista.forEach((element) => {
+      let card = document.createElement("div");
+      card.className = "card";
+      card.dataset.id = element.id;
+      let cardFooter = document.createElement("div");
+      cardFooter.className = "card--footer";
+      let titulo = document.createElement("h1");
+      titulo.textContent = `${element.name}`;
+      let descripcion = document.createElement("p");
+      descripcion.textContent = `$ ${element.price}`;
+      let imagen = document.createElement("img");
+      imagen.src = `${element.image}`;
+      let buttonDel = document.createElement("img");
+      buttonDel.src = "../../assets/iconos/trash-can-regular.svg";
+      buttonDel.alt = "Eliminar Item";
+      buttonDel.className = "delete";
+      card.appendChild(imagen);
+      card.appendChild(titulo);
+      cardFooter.appendChild(descripcion);
+      cardFooter.appendChild(buttonDel);
+      card.appendChild(cardFooter);
+      section.appendChild(card);
+    });
+  } else {
+    section.innerHTML = "<h1>No se encontraron productos</h1>";
+  }
 }
 
 //funcionalidad de agregar item
@@ -43,11 +43,11 @@ if (divDescrip) {
 const formu = document.getElementById("form");
 if (formu) {
   //si hay, maneja el envio
-  formu.addEventListener("submit", handleSubmit);
+  formu.addEventListener("submit", envioForm);
 }
 
 //funcion de manejo de envio de formulario
-async function handleSubmit(evento) {
+async function envioForm(evento) {
   evento.preventDefault();
   const { nombre, precio, imagen } = getFormData();
   if (!isValidFormData(nombre, precio, imagen)) {
@@ -101,17 +101,14 @@ function isValidUrl(url) {
   return regex.test(url);
 }
 
-//eliminacion del producto
-
+// funcion eliminacion del producto
 document.querySelectorAll(".card").forEach((e) => {
   const eliminar = e.querySelector(".delete");
   eliminar.addEventListener("click", async () => {
     const idProd = e.dataset.id;
-    console.log(idProd);
     const indLista = listaAPI.findIndex(
       (producto) => producto.id === parseInt(idProd)
     );
-    console.log(indLista);
     if (indLista !== -1) {
       await conectionAPI.deleteItem(idProd);
       listaAPI.splice(idProd, 1);
@@ -119,3 +116,50 @@ document.querySelectorAll(".card").forEach((e) => {
     }
   });
 });
+
+// funcion para buscar segun palabra clave
+// Selecciona el input
+const inputBusqueda = document.getElementById("search-item");
+
+// confirma si el input existe
+if (inputBusqueda) {
+  // Evento al presionar la tecla "Enter"
+  inputBusqueda.addEventListener("keydown", async (event) => {
+    if (event.key === "Enter") {
+      const listaBuscada = await realizarBusqueda();
+      section.innerHTML = "";
+      renderizarItems(listaBuscada);
+    }
+  });
+  // Evento para detectar cambios en el input
+  inputBusqueda.addEventListener("input", async () => {
+    if (inputBusqueda.value === "") {
+      // llama a la función que carga todos los elementos
+      section.innerHTML = "";
+      renderizarItems(listaAPI);
+    }
+  });
+} else {
+  section.innerHTML = "<h1>El producto no se encontró</h1>";
+}
+
+async function realizarBusqueda() {
+  const nameBuscado = inputBusqueda.value.toLowerCase(); // obtenemos el valor del input
+  console.log(nameBuscado);
+
+  if (nameBuscado) {
+    try {
+      const listaBuscada = await conectionAPI.searchProduct(nameBuscado); // Espera la respuesta
+
+      // Verifica si la listaBuscada no es undefined
+      if (listaBuscada) {
+        return listaBuscada; // devuelve para renderizar
+      } else {
+        renderizarItems([]); // Llamar a renderizarItems con una lista vacía
+      }
+    } catch (error) {
+      section.innerHTML = "<h1>Hubo un error.</h1>";
+      renderizarItems([]); // En caso de error, renderizar una lista vacía
+    }
+  }
+}
