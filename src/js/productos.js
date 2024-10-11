@@ -4,8 +4,6 @@ const listaAPI = await conectionAPI.conexionAPI();
 
 const section = document.querySelector(".container");
 
-console.log(listaAPI);
-
 renderizarItems(listaAPI);
 
 function renderizarItems(lista) {
@@ -16,10 +14,10 @@ function renderizarItems(lista) {
       card.dataset.id = element.id;
       let cardFooter = document.createElement("div");
       cardFooter.className = "card--footer";
-      let titulo = document.createElement("h1");
-      titulo.textContent = `${element.name}`;
-      let descripcion = document.createElement("p");
-      descripcion.textContent = `$ ${element.price}`;
+      let nombre = document.createElement("h1");
+      nombre.textContent = `${element.name}`;
+      let precio = document.createElement("p");
+      precio.textContent = `$ ${element.price}`;
       let imagen = document.createElement("img");
       imagen.src = `${element.image}`;
       let buttonDel = document.createElement("img");
@@ -27,14 +25,16 @@ function renderizarItems(lista) {
       buttonDel.alt = "Eliminar Item";
       buttonDel.className = "delete";
       card.appendChild(imagen);
-      card.appendChild(titulo);
-      cardFooter.appendChild(descripcion);
+      card.appendChild(nombre);
+      cardFooter.appendChild(precio);
       cardFooter.appendChild(buttonDel);
       card.appendChild(cardFooter);
       section.appendChild(card);
     });
+  } else if (section && lista.length === 0) {
+    section.innerHTML = `<h1>No se encontraron productos</h1>`;
   } else {
-    section.innerHTML = "<h1>No se encontraron productos</h1>";
+    document.innerHTML = `<h1> Imposible cargar la página.</h1>`;
   }
 }
 
@@ -140,7 +140,9 @@ if (inputBusqueda) {
     }
   });
 } else {
-  section.innerHTML = "<h1>El producto no se encontró</h1>";
+  if (section) {
+    section.innerHTML = "<h1>El producto no se encontró</h1>";
+  }
 }
 
 async function realizarBusqueda() {

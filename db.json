@@ -212,27 +212,21 @@
     },
     {
       "name": "Zapatillas Unisex Nike Air Force 1 Mid 07",
-      "price": "9999",
+      "price": 990,
       "image": "https://celadasa.vtexassets.com/arquivos/ids/385267-1200-auto?v=638634689353600000&width=1200&height=auto&aspect=true",
       "id": 37
     },
     {
       "name": "Zapatillas Hombre Nike Air Max 1",
-      "price": "790",
+      "price": 799,
       "image": "https://celadasa.vtexassets.com/arquivos/ids/384174-1200-auto?v=638631298541430000&width=1200&height=auto&aspect=true",
       "id": 38
     },
     {
       "name": "Zapatillas Hombre Nike Air Uptempo '96",
-      "price": "789.6",
+      "price": 789.6,
       "image": "https://celadasa.vtexassets.com/arquivos/ids/383942-1600-auto?v=638631276096970000&width=1600&height=auto&aspect=true",
       "id": 39
-    },
-    {
-      "name": "Zapatillas Adidas Originals Superstar",
-      "price": "350",
-      "image": "https://www.tripstore.com.ar/media/catalog/product/cache/4769e4d9f3516e60f2b4303f8e5014a8/G/W/GW5920_0_23.jpg",
-      "id": 40
     }
   ]
 }
