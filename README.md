@@ -6,7 +6,7 @@ para [Alura ONE](https://github.com/alura-es-cursos)
 
 En este desafío desarrollamos una aplicación para listar, registrar y eliminar productos usando HTML, CSS y JAVASCRIPT, aplicando conceptos como programación asíncrona, solicitudes HTTP, validación de formularios, manipulación del DOM y otros conceptos avanzados.
 
-## Autora :black_nib:
+## Desarrollado por: :black_nib:
 
 - Alicia Zuñega - [@alizunega](https://github.com/alizunega)
 
@@ -65,13 +65,9 @@ proyecto_tienda
 ## Consideraciones
 
 > [!NOTE]
-
-> En este proyecto trabajamos instalando node.js para poder hacer uso de la herramienta npm. Se recomienda su previa instalación si desea verlo en funcionamiento.
-
-> Revise el formato recomendado para el ingreso de datos, por ejemplo: url de imágenes deben ser url válidas, el formato de precio es solo numeros con el . como simbolo decimal.
-
-> Puede que en la busqueda se tome en cuenta también la url dentro de los parámetros de búsqueda.
-
+> En este proyecto trabajamos instalando node.js para poder hacer uso de la herramienta npm. Se recomienda su previa instalación si desea verlo en funcionamiento.  
+> Revise el formato recomendado para el ingreso de datos, por ejemplo: url de imágenes deben ser url válidas, el formato de precio es solo numeros con el '.' como simbolo decimal.  
+> Puede que en la busqueda se tome en cuenta también la url dentro de los parámetros de búsqueda.  
 > El proyecto se encuentra en desarrollo, por lo que puede haber errores o problemas que no se han detectado aun. Sientase libre de comentarlos por dm si lo necesita.
 
 ## Construido Con :hammer_and_wrench:
