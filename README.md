@@ -66,19 +66,17 @@ proyecto_tienda
 
 > [!NOTE]
 > En este proyecto trabajamos instalando node.js para poder hacer uso de la herramienta npm. Se recomienda su previa instalación si desea verlo en funcionamiento.
->   
+>
 > Revise el formato recomendado para el ingreso de datos, por ejemplo: url de imágenes deben ser url válidas, el formato de precio es solo numeros con el '.' como simbolo decimal.
->   
+>
 > Puede que en la busqueda se tome en cuenta también la url dentro de los parámetros de búsqueda.
->   
+>
 > El proyecto se encuentra en desarrollo, por lo que puede haber errores o problemas que no se han detectado aun. Sientase libre de comentarlos por dm si lo necesita.
-> 
 
 ## Construido Con :hammer_and_wrench:
 
-<div>
-    <p>Html, Css, JavaScript, Node.js, npm</p>
+<p align="center">
   <a href="https://skillicons.dev">
-    <img src="https://skillicons.dev/icons?i=html,css,js,nodejs,npm&theme=dark&perline=2" />
+    <img src="https://skillicons.dev/icons?i=html,css,js,nodejs,npm&theme=dark" />
   </a>
-</div>
+</p>
