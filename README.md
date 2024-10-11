@@ -75,8 +75,4 @@ proyecto_tienda
 
 ## Construido Con :hammer_and_wrench:
 
-<p align="center">
-  <a href="https://skillicons.dev">
-    <img src="https://skillicons.dev/icons?i=html,css,js,nodejs,npm" />
-  </a>
-</p>
+[![Tools](https://skillicons.dev/icons?i=js,html,css,nodejs,npm)](https://skillicons.dev)
