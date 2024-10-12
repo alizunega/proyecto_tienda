@@ -1,4 +1,4 @@
-const url = "http://localhost:3001/products";
+const url = "/api/data.js";
 
 async function conexionAPI() {
   let productos = await fetch(url, {
