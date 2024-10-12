@@ -1,6 +1,16 @@
 import { conectionAPI } from "./conectionAPI.js";
+const main = document.querySelector(".main");
 
-const listaAPI = await conectionAPI.conexionAPI();
+const listaAPI = await conectionAPI
+  .conexionAPI()
+  .then((response) => {
+    console.log(response);
+    return response;
+  })
+  .catch((error) => {
+    console.log(error.message);
+    main.innerHTML = `<h1> No se pudo realizar la conexión</h1>`;
+  });
 
 const section = document.querySelector(".container");
 
@@ -32,7 +42,8 @@ function renderizarItems(lista) {
       section.appendChild(card);
     });
   } else if (section && lista.length === 0) {
-    section.innerHTML = `<h1>No se encontraron productos</h1>`;
+    console.log(lista.length);
+    main.innerHTML = `<h1>No se encontraron productos</h1>`;
   } else {
     document.innerHTML = `<h1> Imposible cargar la página.</h1>`;
   }

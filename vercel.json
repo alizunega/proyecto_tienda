@@ -1,0 +1,14 @@
+{
+    "builds": [
+        {
+            "src": "index.html",
+            "use": "@vercel/static"
+        }
+    ],
+    "routes": [
+        {
+            "src": "/api/(.*)",
+            "dest": "http://localhost:3001/products"
+        }
+    ]
+}

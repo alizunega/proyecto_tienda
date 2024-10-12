@@ -4,11 +4,21 @@
   "description": "Proyecto Tienda  - para Alura ONE",
   "main": "index.js",
   "scripts": {
+    "start": "json-server --watch --port 3001 db.json",
+    "build": "echo 'No build step needed'",
+    "dev": "json-server --watch --port 3001 db.json",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "keywords": [
+    "Alura",
+    "Javascript",
+    "frontend",
+    "tienda",
+    "asincrono",
+    "promesas"
+  ],
+  "author": "Alicia <ali.zunega@gmail.com> (https://github.com/alizunega)",
+  "license": "MIT",
   "dependencies": {
     "json-server": "^0.17.4"
   }
