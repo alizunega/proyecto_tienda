@@ -1,4 +1,4 @@
-const url = "/api/data/products";
+const url = "/api/data";
 
 async function conexionAPI() {
   let response = await fetch(url, {

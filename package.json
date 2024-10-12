@@ -2,7 +2,7 @@
   "name": "proyecto_tienda",
   "version": "1.0.0",
   "description": "Proyecto Tienda  - para Alura ONE",
-  "main": "main.js",
+  "main": "./public/src/js/main.js",
   "scripts": {
     "start": "npx json-server --watch db.json --port 3000",
     "dev": "npx json-server --watch db.json --port 3000",
