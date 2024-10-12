@@ -10,5 +10,11 @@
             "src": "/api/(.*)",
             "dest": "http://localhost:3001/products"
         }
+    ],
+    "rewrites": [
+        {
+            "source": "/(.*)",
+            "destination": "/public/$1"
+        }
     ]
 }
