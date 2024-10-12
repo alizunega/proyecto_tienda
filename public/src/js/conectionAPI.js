@@ -6,7 +6,7 @@ async function conexionAPI() {
     headers: {
       "Content-type": "application/json",
       "Permissions-Policy":
-        "geolocation=(self `http://localhost:3001/products`)",
+        "geolocation=(self `http://proyecto-tienda-rosy.vercel.app/`)",
     },
   });
 
