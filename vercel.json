@@ -1,20 +1,15 @@
 {
+    "version": 2,
     "builds": [
         {
-            "src": "index.html",
+            "src": "public/**/*",
             "use": "@vercel/static"
         }
     ],
     "routes": [
         {
-            "src": "/api/(.*)",
-            "dest": "http://localhost:3001/products"
-        }
-    ],
-    "rewrites": [
-        {
-            "source": "/(.*)",
-            "destination": "/public/$1"
+            "src": "/(.*)",
+            "dest": "/"
         }
     ]
 }
