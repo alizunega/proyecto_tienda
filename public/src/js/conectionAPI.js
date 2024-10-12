@@ -1,18 +1,18 @@
 const url = "/api/data";
 
 async function conexionAPI() {
-  let productos = await fetch(url, {
+  let response = await fetch(url, {
     method: "GET",
     headers: {
       "Content-type": "application/json",
     },
   });
 
-  if (!productos.ok) {
+  if (!response.ok) {
     throw new Error("Network response was not ok");
   }
 
-  let productosJSON = await productos.json();
+  let productosJSON = await response.json();
   return productosJSON;
 }
 
