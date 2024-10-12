@@ -1,14 +1,16 @@
-const url = "/api/data.js";
+const url = "/api/data";
 
 async function conexionAPI() {
   let productos = await fetch(url, {
     method: "GET",
     headers: {
       "Content-type": "application/json",
-      "Permissions-Policy":
-        "geolocation=(self `http://proyecto-tienda-rosy.vercel.app/`)",
     },
   });
+
+  if (!productos.ok) {
+    throw new Error("Network response was not ok");
+  }
 
   let productosJSON = await productos.json();
   return productosJSON;
