@@ -4,9 +4,9 @@
   "description": "Proyecto Tienda  - para Alura ONE",
   "main": "main.js",
   "scripts": {
-    "start": "json-server --watch --port 3001 db.json",
+    "start": "npx json-server --watch db.json --port 3000",
     "build": "echo 'No build step needed'",
-    "dev": "json-server --watch --port 3001 db.json",
+    "dev": "npx json-server --watch --port 3001 db.json",
     "test": "echo \"Error: no test specified\" && exit 1",
     "vercel-build": "echo Hello desde Vercel"
   },
