@@ -6,8 +6,7 @@
   "scripts": {
     "start": "npx json-server --watch db.json --port 3000",
     "dev": "npx json-server --watch db.json --port 3000",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "vercel-build": "echo Hello desde Vercel"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
     "Alura",

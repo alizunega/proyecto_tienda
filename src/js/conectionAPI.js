@@ -1,4 +1,4 @@
-const url = "/api/data";
+const url = "http://localhost:3000/products";
 
 async function conexionAPI() {
   let response = await fetch(url, {
@@ -13,6 +13,7 @@ async function conexionAPI() {
   }
 
   let productosJSON = await response.json();
+  console.log("aca productosJSON", productosJSON);
   return productosJSON;
 }
 

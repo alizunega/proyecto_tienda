@@ -5,7 +5,7 @@ const main = document.querySelector(".main");
 const listaAPI = await conectionAPI
   .conexionAPI()
   .then((response) => {
-    console.log(response);
+    console.log("aca response", response);
     return response;
   })
   .catch((error) => {
@@ -14,10 +14,12 @@ const listaAPI = await conectionAPI
   });
 
 const section = document.querySelector(".container");
-
+console.log("aca listaAPI", listaAPI);
 renderizarItems(listaAPI);
 
 function renderizarItems(lista) {
+  console.log("aca lista que ingresa a renderizar", lista);
+  console.log("aca su longitud", lista.length);
   if (section && lista.length > 0) {
     lista.forEach((element) => {
       let card = document.createElement("div");
@@ -32,7 +34,7 @@ function renderizarItems(lista) {
       let imagen = document.createElement("img");
       imagen.src = `${element.image}`;
       let buttonDel = document.createElement("img");
-      buttonDel.src = "../../assets/iconos/trash-can-regular.svg";
+      buttonDel.src = "./assets/iconos/trash-can-regular.svg";
       buttonDel.alt = "Eliminar Item";
       buttonDel.className = "delete";
       card.appendChild(imagen);
