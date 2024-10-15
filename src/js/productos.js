@@ -5,7 +5,6 @@ const main = document.querySelector(".main");
 const listaAPI = await conectionAPI
   .conexionAPI()
   .then((response) => {
-    console.log("aca response", response);
     return response;
   })
   .catch((error) => {
@@ -14,12 +13,10 @@ const listaAPI = await conectionAPI
   });
 
 const section = document.querySelector(".container");
-console.log("aca listaAPI", listaAPI);
+
 renderizarItems(listaAPI);
 
 function renderizarItems(lista) {
-  console.log("aca lista que ingresa a renderizar", lista);
-  console.log("aca su longitud", lista.length);
   if (section && lista.length > 0) {
     lista.forEach((element) => {
       let card = document.createElement("div");
@@ -45,74 +42,96 @@ function renderizarItems(lista) {
       section.appendChild(card);
     });
   } else if (section && lista.length === 0) {
-    console.log(lista.length);
     main.innerHTML = `<h1>No se encontraron productos</h1>`;
   } else {
     document.innerHTML = `<h1> Imposible cargar la página.</h1>`;
   }
 }
 
-//funcionalidad de agregar item
-// trae el formulario y comprueba si cargo la pagina
+// Funcionalidad de agregar item
+// Trae el formulario y comprueba si se carga la página
 const formu = document.getElementById("form");
 if (formu) {
-  //si hay, maneja el envio
+  // Si hay, maneja el envío
   formu.addEventListener("submit", envioForm);
 }
 
-//funcion de manejo de envio de formulario
-async function envioForm(evento) {
-  evento.preventDefault();
-  const { nombre, precio, imagen } = getFormData();
-  if (!isValidFormData(nombre, precio, imagen)) {
-    // avisa que hay campos vacios
-    alert("Debe llenar todos los campos!");
-    return;
-  } else if (!precioValido(precio)) {
-    //avisa que el formato de precio no es correcto
-    alert("El precio ingresado no es válido. El formato debe ser: 100.00");
-    return;
-  } else if (!isValidUrl(imagen)) {
-    //avisa que la url de imagen no es correcta
-    alert("Esa no es una url válida");
-    return;
-  }
-  try {
-    // espera los datos del formulario para enviarlos
-    await conectionAPI.addProduct(nombre, precio, imagen);
-    // redirige a la pagina que muestra mensaje satisfactorio
-    window.location.replace("../../pages/addok.html");
-  } catch (error) {
-    // en caso de error de envio, muestra el error
-    alert(`No se pudo agregar el producto: ${error.message}`);
-  }
-}
+// Función de manejo de envío de formulario
 
-//obtine los datos de los campos del formulario de carga
+// Obtiene los datos de los campos del formulario de carga
 function getFormData() {
   return {
-    nombre: document.querySelector("#name").value,
-    precio: document.querySelector("#price").value,
-    imagen: document.querySelector("#image").value,
+    nombre: document.querySelector("#name").value.trim(),
+    precio: document.querySelector("#price").value.trim(),
+    imagen: document.querySelector("#image").value.trim(),
   };
 }
 
-// comprueba si los campos estan todos completos
+async function envioForm(evento) {
+  evento.preventDefault();
+  const { nombre, precio, imagen } = getFormData();
+  const errores = document.querySelectorAll(".form-msj");
+
+  // Limpiar mensajes de error al inicio
+  errores.forEach((error) => (error.textContent = ""));
+
+  // Validar datos del formulario
+  if (!isValidFormData(nombre, precio, imagen)) {
+    mostrarError(errores[0], "El campo Nombre debe ser completado.", !nombre);
+    mostrarError(errores[1], "El campo Precio debe ser completado.", !precio);
+    mostrarError(errores[2], "El campo Imagen debe ser completado.", !imagen);
+    return;
+  }
+
+  if (!precioValido(precio)) {
+    mostrarError(
+      errores[1],
+      "El precio ingresado no es válido. El formato debe ser: 100.00"
+    );
+    return;
+  }
+
+  if (!isValidUrl(imagen)) {
+    mostrarError(errores[2], "La url de la imagen no es válida");
+    return;
+  }
+
+  // Intentar enviar los datos del formulario
+  try {
+    await conectionAPI.addProduct(nombre, precio, imagen);
+    // si todo ha salido bien - carga pagina con el mensaje correspondiente
+    window.location.replace("../../pages/mensajeadd.html?mensaje=ok");
+  } catch (error) {
+    // si hubo un error en la carga - formatea la pagina avisando de ello
+    window.location.replace("../../pages/mensajeadd.html?mensaje=bad");
+    // alert(`No se pudo agregar el producto: ${error.message}`);
+  }
+}
+
+// Comprueba si los campos están todos completos
 function isValidFormData(nombre, precio, imagen) {
   return nombre && precio && imagen;
 }
 
-// comprueba si elformato de precio ingresado es correcto
+// Comprueba si el formato de precio ingresado es correcto
 function precioValido(precio) {
-  if (!isNaN(precio) && precio > 0) {
-    return true;
-  }
+  return !isNaN(precio) && precio > 0;
 }
-// comprueba si la url de imagen tiene formato correcto
+
+// Comprueba si la URL de imagen tiene formato correcto
 function isValidUrl(url) {
   const regex =
     /^(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?$/;
   return regex.test(url);
+}
+
+// Muestra error en el span correspondiente
+function mostrarError(span, mensaje, mostrar) {
+  if (mostrar) {
+    span.textContent = mensaje;
+  } else {
+    span.textContent = ""; // Limpia el mensaje si no hay error
+  }
 }
 
 // funcion eliminacion del producto
@@ -178,4 +197,39 @@ async function realizarBusqueda() {
       renderizarItems([]); // En caso de error, renderizar una lista vacía
     }
   }
+}
+
+// Formateado de pagina de mensaje
+
+const mainMensaje = document.querySelector(".main--mensaje");
+const urlParams = new URLSearchParams(window.location.search);
+const mensaje = urlParams.get("mensaje");
+if (mensaje === "ok") {
+  mainMensaje.innerHTML = ` <div class="saludo">
+    <h1>¡Producto agregado satisfactoriamente!</h1>
+    <img src="../assets/iconos/added.png" alt="Producto agregado satisfactoriamente">
+</div>
+<div class="buttons--saludo">
+    <a href="../index.html"><img src="../assets/iconos/volver_pagina.png" alt="Volver a pagina principal">Volver
+        a
+        pagina principal</a>
+    <a href="./pages/formulario.html">
+        <img src="../assets/iconos/add_item.png" alt="Agregar mas producto">
+        Agregar otro producto
+    </a>
+</div>`;
+} else if (mensaje === "bad") {
+  //cuando no se pudo agregar el nuevo item
+  mainMensaje.innerHTML = ` <div class="saludo"><h1>¡No se pudo agregar el producto! Intente más tarde.</h1>
+  <img src="../assets/iconos/error_conection.png" alt="Error al cargar">
+  </div>
+  <div class="buttons--saludo">
+    <a href="../index.html"><img src="../assets/iconos/volver_pagina.png" alt="Volver a pagina principal">Volver
+        a
+        pagina principal</a>
+    <a href="./pages/formulario.html">
+        <img src="../assets/iconos/add_item.png" alt="Agregar mas producto">
+        Agregar otro producto
+    </a>
+</div>`;
 }

@@ -4,8 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="../assets/iconos/store_front.png">
-    <link rel="stylesheet" href="../src/css/reset.css">
+    <link rel="shortcut icon" href="../assets/iconos/favico.png" type="image/x-icon">
+    <link rel=" stylesheet" href="../src/css/reset.css">
     <link rel="stylesheet" href="../src/css/style.css">
 
     <title>Carga Productos</title>
@@ -28,18 +28,25 @@
             <form action="" id="form">
                 <ul class="form--list">
                     <li class="form--item">
-                        <label for="name"><img src="../assets/iconos/tag_descrip.png" alt="Nombre producto"></label>
-                        <input type="text" name="name" id="name" placeholder="Nombre producto" autocomplete="name">
-
+                        <div class="form--item-content">
+                            <label for="name"><img src="../assets/iconos/tag_descrip.png" alt="Nombre producto"></label>
+                            <input type="text" name="name" id="name" placeholder="Nombre producto" autocomplete="name">
+                        </div>
+                        <span class="form-msj" id="error-name"></span>
                     </li>
                     <li class="form--item">
-                        <label for="price"><img src="../assets/iconos/price.png" alt="Precio producto"></label>
-                        <input type="number" name="price" id="price" placeholder="100.00" autocomplete="price">
-
+                        <div class="form--item-content">
+                            <label for="price"><img src="../assets/iconos/price.png" alt="Precio producto"></label>
+                            <input type="number" name="price" id="price" placeholder="100.00" autocomplete="price">
+                        </div>
+                        <span class="form-msj" id="error-price"></span>
                     </li>
                     <li class="form--item">
-                        <label for="image"><img src="../assets/iconos/imageico.png" alt="Url imagen"></label>
-                        <input type="text" name="image" id="image" placeholder="url imagen" autocomplete="image">
+                        <div class="form--item-content">
+                            <label for="image"><img src="../assets/iconos/imageico.png" alt="Url imagen"></label>
+                            <input type="text" name="image" id="image" placeholder="url imagen" autocomplete="image">
+                        </div>
+                        <span class="form-msj" id="error-url"></span>
                     </li>
                 </ul>
                 <div class="buttons_section">

@@ -144,7 +144,7 @@ a {
 }
 
 /*  Estilos pagina producto cargado */
-.main--felicitacion {
+.main--mensaje {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -154,7 +154,7 @@ a {
     margin-bottom: 0;
 }
 
-.main--felicitacion img {
+.main--mensaje img {
     width: 3.5em;
 }
 
@@ -290,23 +290,44 @@ section.container {
     align-content: center;
 }
 
-.form--item {
+.form--item-content {
     display: flex;
     flex-direction: row;
+    /* Label e input en la misma fila */
     justify-content: space-between;
+    align-items: center;
+    /* Alinea verticalmente el contenido */
+    width: 100%;
+}
+
+.form--item {
+    display: flex;
+    flex-direction: column;
+    /* Mantener los hijos en columna para que el span quede debajo */
     padding: .6em .7em;
     width: 100%;
 }
 
+
+.form--item label {
+    margin-right: 1em;
+}
+
 .form--item input {
-    width: 100%;
+    width: 90%;
     padding: .5em;
     height: 2.5em;
     text-align: right;
-
+    margin-bottom: 0.2em;
 }
 
+.form-msj {
+    color: red;
+    font-size: 1em;
+    margin-top: 0.2em;
+    text-align: right;
 
+}
 
 #form button {
     background-color: rgb(139, 139, 245);
