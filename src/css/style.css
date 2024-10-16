@@ -190,7 +190,7 @@ section.container {
     grid-template-rows: auto;
     gap: 1rem;
     height: auto;
-    width: 70%;
+    width: 100%;
     text-align: center;
     margin: auto;
     padding-bottom: 2em;
@@ -202,13 +202,12 @@ section.container {
     padding: .6em .9em;
     height: auto;
     min-height: 15em;
-    max-height: 50em;
     border-radius: .4em;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    width: 100%;
+    width: 90%;
 }
 
 .card:hover {
@@ -220,22 +219,21 @@ section.container {
 .card--footer {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
-    width: 70%;
+    justify-content: space-around;
+    width: 100%;
     height: auto;
-    font-size: 1.2em;
+    font-size: 1.5em;
 }
 
 
 .card img {
     width: 100%;
-    /* max-height: 30em; */
     height: auto;
     object-fit: cover;
 }
 
 .card--footer .delete {
-    width: 2em;
+    width: 1.3em;
     text-align: right;
 }
 
@@ -395,7 +393,7 @@ section.container {
 
         grid-template-columns: repeat(2, 1fr);
         align-items: stretch;
-        width: 80%;
+        width: 90%;
 
     }
 

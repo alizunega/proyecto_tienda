@@ -45,9 +45,7 @@ async function addProduct(name, price, image) {
 // Función para realizar la solicitud DELETE
 // Función para verificar si el item existe segun id
 async function itemExists(id) {
-  console.log("tipo de datos de id que llega ", typeof id);
   const response = await fetch(url + `/${id}`);
-  console.log("la respuesta a si existe es: ", response);
   if (response.ok) {
     return true; // El item existe
   } else {
@@ -59,7 +57,6 @@ async function itemExists(id) {
 async function deleteItem(id) {
   try {
     const exists = await itemExists(id); // Verificar si el item existe
-    console.log("existe o no: ", exists);
     if (!exists) {
       alert(`El elemento con ID ${id} no existe`);
       return; // Salir de la función si no existe
@@ -75,7 +72,7 @@ async function deleteItem(id) {
     console.log("la respuesta es: ", response);
 
     if (response.ok) {
-      alert(`Elemento con ID ${id} eliminado con éxito`);
+      alert(`Elemento eliminado con éxito`);
     } else {
       alert(`Error ${response.status}: ${response.statusText}`);
     }
