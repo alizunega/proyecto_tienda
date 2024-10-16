@@ -1,4 +1,5 @@
-const url = "http://localhost:3000/products";
+const url =
+  "https://my-json-server.typicode.com/alizunega/json-server/products";
 
 async function conexionAPI() {
   let response = await fetch(url, {

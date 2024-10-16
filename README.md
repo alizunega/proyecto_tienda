@@ -12,6 +12,14 @@ En este desafío desarrollamos una aplicación para listar, registrar y eliminar
 
 ## Requerimientos del proyecto :memo:
 
+> [!IMPORTANT]
+>
+> Este proyecto fue desarrollado con el objetivo de cumplir con los requisitos del desafío
+>
+> Para poder hacerlo visible utilizaremos un server fake haciendo uso de este recurso (https://my-json-server.typicode.com/)
+>
+> Al ser un recurso free, contamos con limitaciones. Una de ellas es un máximo de 30 items en la lista de productos. Tenga esto encuenta a la hora de utilizar.
+
 ### Instalación y Uso :computer:
 
 1- Clona el repositorio:
