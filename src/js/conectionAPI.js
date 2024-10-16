@@ -64,22 +64,44 @@ async function deleteItem(id) {
 }
 
 // Función para buscar productos por palabra clave
+// async function searchProduct(key) {
+//   try {
+//     let response = await fetch(url + `?q=${key}`);
+
+//     // Verificar si la respuesta es correcta antes de intentar convertirla a JSON
+//     if (!response.ok) {
+//       throw new Error("Error en la respuesta de la red");
+//     }
+
+//     let productoJSON = await response.json(); // Convertir la respuesta a JSON
+
+//     if (productoJSON.length > 0) {
+//       return productoJSON; // Retornar los productos encontrados
+//     } else {
+//       return []; // Retornar una lista vacía si no hay productos
+//     }
+//   } catch (error) {
+//     alert("Hubo un error en la búsqueda: " + error.message);
+//     return []; // Retornar una lista vacía en caso de error
+//   }
+// }
 async function searchProduct(key) {
   try {
-    let response = await fetch(url + `?q=${key}`);
+    let response = await fetch(url);
 
     // Verificar si la respuesta es correcta antes de intentar convertirla a JSON
     if (!response.ok) {
       throw new Error("Error en la respuesta de la red");
     }
 
-    let productoJSON = await response.json(); // Convertir la respuesta a JSON
+    let productosJSON = await response.json(); // Convertir la respuesta a JSON
 
-    if (productoJSON.length > 0) {
-      return productoJSON; // Retornar los productos encontrados
-    } else {
-      return []; // Retornar una lista vacía si no hay productos
-    }
+    // Filtrar los productos que coincidan parcialmente con el valor de 'key'
+    let productosFiltrados = productosJSON.filter((producto) =>
+      producto.name.toLowerCase().includes(key.toLowerCase())
+    );
+
+    return productosFiltrados.length > 0 ? productosFiltrados : [];
   } catch (error) {
     alert("Hubo un error en la búsqueda: " + error.message);
     return []; // Retornar una lista vacía en caso de error
