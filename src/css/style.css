@@ -194,15 +194,15 @@ section.container {
     text-align: center;
     margin: auto;
     padding-bottom: 2em;
-
 }
 
 .card {
-    background-color: #967896;
+    background-color: rgb(228, 226, 226);
     margin: .8em auto;
     padding: .6em .9em;
     height: auto;
     min-height: 15em;
+    max-height: 50em;
     border-radius: .4em;
     display: flex;
     flex-direction: column;
@@ -224,12 +224,12 @@ section.container {
     width: 70%;
     height: auto;
     font-size: 1.2em;
-
 }
 
 
 .card img {
     width: 100%;
+    /* max-height: 30em; */
     height: auto;
     object-fit: cover;
 }

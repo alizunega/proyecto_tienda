@@ -43,8 +43,28 @@ async function addProduct(name, price, image) {
 }
 
 // Función para realizar la solicitud DELETE
+// Función para verificar si el item existe segun id
+async function itemExists(id) {
+  console.log("tipo de datos de id que llega ", typeof id);
+  const response = await fetch(url + `/${id}`);
+  console.log("la respuesta a si existe es: ", response);
+  if (response.ok) {
+    return true; // El item existe
+  } else {
+    return false; // El item no existe
+  }
+}
+
+// Función para realizar eliminacion
 async function deleteItem(id) {
   try {
+    const exists = await itemExists(id); // Verificar si el item existe
+    console.log("existe o no: ", exists);
+    if (!exists) {
+      alert(`El elemento con ID ${id} no existe`);
+      return; // Salir de la función si no existe
+    }
+
     const response = await fetch(url + `/${id}`, {
       method: "DELETE",
       headers: {
@@ -52,39 +72,19 @@ async function deleteItem(id) {
       },
     });
 
-    // Comprobar si la solicitud fue exitosa
+    console.log("la respuesta es: ", response);
+
     if (response.ok) {
       alert(`Elemento con ID ${id} eliminado con éxito`);
     } else {
       alert(`Error ${response.status}: ${response.statusText}`);
     }
   } catch (error) {
-    alert("Hubo un error con la solicitud: ", error);
+    alert("Hubo un error con la solicitud: " + error);
   }
 }
+// Funcion para buscar un producto segun palabra clave
 
-// Función para buscar productos por palabra clave
-// async function searchProduct(key) {
-//   try {
-//     let response = await fetch(url + `?q=${key}`);
-
-//     // Verificar si la respuesta es correcta antes de intentar convertirla a JSON
-//     if (!response.ok) {
-//       throw new Error("Error en la respuesta de la red");
-//     }
-
-//     let productoJSON = await response.json(); // Convertir la respuesta a JSON
-
-//     if (productoJSON.length > 0) {
-//       return productoJSON; // Retornar los productos encontrados
-//     } else {
-//       return []; // Retornar una lista vacía si no hay productos
-//     }
-//   } catch (error) {
-//     alert("Hubo un error en la búsqueda: " + error.message);
-//     return []; // Retornar una lista vacía en caso de error
-//   }
-// }
 async function searchProduct(key) {
   try {
     let response = await fetch(url);

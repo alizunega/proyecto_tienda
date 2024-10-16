@@ -146,13 +146,15 @@ document.querySelectorAll(".card").forEach((e) => {
   const eliminar = e.querySelector(".delete");
   eliminar.addEventListener("click", async () => {
     const idProd = e.dataset.id;
-    const indLista = listaAPI.findIndex(
-      (producto) => producto.id === parseInt(idProd)
-    );
+    console.log("id en evento: ", idProd);
+    const indLista = listaAPI.findIndex((producto) => producto.id === idProd);
+    console.log("id en lista, si existe: ", indLista);
     if (indLista !== -1) {
-      await conectionAPI.deleteItem(idProd);
-      listaAPI.splice(idProd, 1);
-      e.remove();
+      let respuesta = await conectionAPI.deleteItem(idProd);
+      if (respuesta.ok) {
+        listaAPI.splice(idProd, 1);
+        e.remove();
+      }
     }
   });
 });
