@@ -14,11 +14,13 @@ En este desafío desarrollamos una aplicación para listar, registrar y eliminar
 
 > [!IMPORTANT]
 >
-> Este proyecto fue desarrollado con el objetivo de cumplir con los requisitos del desafío
+> Este proyecto fue desarrollado con el objetivo de cumplir con los requisitos del desafío.
 >
 > Para poder hacerlo visible utilizaremos un server fake haciendo uso de este recurso (https://my-json-server.typicode.com/)
 >
 > Al ser un recurso free, contamos con limitaciones. Una de ellas es un máximo de 30 items en la lista de productos. Tenga esto encuenta a la hora de utilizar.
+>
+> Por el momento solo es posible listar los productos y buscar según palabra clave. Para probar la funcionalidad de agregar producto, se recomienda clonar el repositorio y levantar con live server.
 
 ### Instalación y Uso :computer:
 
@@ -73,9 +75,9 @@ proyecto_tienda
 ## Consideraciones
 
 > [!NOTE]
-> En este proyecto trabajamos instalando node.js para poder hacer uso de la herramienta npm. Se recomienda su previa instalación si desea verlo en funcionamiento.
+> En este proyecto trabajamos instalando Node.js para poder hacer uso de la herramienta npm. Se recomienda su previa instalación si desea verlo en funcionamiento.
 >
-> Revise el formato recomendado para el ingreso de datos, por ejemplo: url de imágenes deben ser url válidas, el formato de precio es solo numeros con el '.' como simbolo decimal.
+> Revise el formato recomendado para el ingreso de datos, por ejemplo: url de imágenes deben ser url válida, el formato de precio es solo numeros con el '.' como simbolo decimal.
 >
 > Puede que en la busqueda se tome en cuenta también la url dentro de los parámetros de búsqueda.
 >

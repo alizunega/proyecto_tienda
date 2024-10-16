@@ -1,6 +1,8 @@
 // variable para entorno de produccion
-const url =
-  "https://my-json-server.typicode.com/alizunega/json-server/products";
+// const url =
+//   "https://my-json-server.typicode.com/alizunega/json-server/products";
+
+const url = "https://670fcaf9a85f4164ef2bf249.mockapi.io/products";
 
 // Variable para entorno de desarrollo
 

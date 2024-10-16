@@ -98,13 +98,16 @@ async function envioForm(evento) {
 
   // Intentar enviar los datos del formulario
   try {
+    console.log("Enviando producto...");
     await conectionAPI.addProduct(nombre, precio, imagen);
+    console.log("Producto cargado correctamente");
     // si todo ha salido bien - carga pagina con el mensaje correspondiente
     window.location.replace(
       "/proyecto_tienda/pages/mensajeadd.html?mensaje=ok"
     );
   } catch (error) {
     // si hubo un error en la carga - formatea la pagina avisando de ello
+    console.log("Hubo un error al cargar el producto");
     window.location.replace(
       "/proyecto_tienda/pages/mensajeadd.html?mensaje=bad"
     );
