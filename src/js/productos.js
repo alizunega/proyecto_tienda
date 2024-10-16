@@ -217,10 +217,10 @@ if (mensaje === "ok") {
     <img src="../assets/iconos/added.png" alt="Producto agregado satisfactoriamente">
 </div>
 <div class="buttons--saludo">
-    <a href="../index.html"><img src="../assets/iconos/volver_pagina.png" alt="Volver a pagina principal">Volver
+    <a href="/proyecto_tienda/index.html"><img src="../assets/iconos/volver_pagina.png" alt="Volver a pagina principal">Volver
         a
         pagina principal</a>
-    <a href="./pages/formulario.html">
+    <a href="/proyecto_tienda/pages/formulario.html">
         <img src="../assets/iconos/add_item.png" alt="Agregar mas producto">
         Agregar otro producto
     </a>
@@ -231,10 +231,10 @@ if (mensaje === "ok") {
   <img src="../assets/iconos/error_conection.png" alt="Error al cargar">
   </div>
   <div class="buttons--saludo">
-    <a href="../index.html"><img src="../assets/iconos/volver_pagina.png" alt="Volver a pagina principal">Volver
+    <a href="/proyecto_tienda/index.html"><img src="../assets/iconos/volver_pagina.png" alt="Volver a pagina principal">Volver
         a
         pagina principal</a>
-    <a href="./pages/formulario.html">
+    <a href="/proyecto_tienda/pages/formulario.html">
         <img src="../assets/iconos/add_item.png" alt="Agregar mas producto">
         Agregar otro producto
     </a>
