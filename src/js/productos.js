@@ -100,10 +100,14 @@ async function envioForm(evento) {
   try {
     await conectionAPI.addProduct(nombre, precio, imagen);
     // si todo ha salido bien - carga pagina con el mensaje correspondiente
-    window.location.replace("./mensajeadd.html?mensaje=ok");
+    window.location.replace(
+      "/proyecto_tienda/pages/mensajeadd.html?mensaje=ok"
+    );
   } catch (error) {
     // si hubo un error en la carga - formatea la pagina avisando de ello
-    window.location.replace("./mensajeadd.html?mensaje=bad");
+    window.location.replace(
+      "/proyecto_tienda/pages/mensajeadd.html?mensaje=bad"
+    );
     // alert(`No se pudo agregar el producto: ${error.message}`);
   }
 }
