@@ -68,7 +68,7 @@ proyecto_tienda
 
 ## Despliegue :package:
 
-[_En desarrollo_](#)
+[_Tienda Alura_](https://alizunega.github.io/proyecto_tienda/)
 
 ## Consideraciones
 

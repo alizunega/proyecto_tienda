@@ -1,5 +1,10 @@
+// variable para entorno de produccion
 const url =
   "https://my-json-server.typicode.com/alizunega/json-server/products";
+
+// Variable para entorno de desarrollo
+
+// const url = "http://localhost:3000/products";
 
 async function conexionAPI() {
   let response = await fetch(url, {
