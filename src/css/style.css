@@ -100,7 +100,7 @@ a {
 }
 
 .header--img-logo {
-    width: 8rem;
+    width: 5rem;
     top: 0;
     left: 0;
 }
@@ -190,7 +190,7 @@ section.container {
     grid-template-rows: auto;
     gap: 1rem;
     height: auto;
-    width: 100%;
+    width: 90%;
     text-align: center;
     margin: auto;
     padding-bottom: 2em;
@@ -207,7 +207,7 @@ section.container {
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    width: 90%;
+    width: 80%;
 }
 
 .card:hover {
@@ -227,9 +227,10 @@ section.container {
 
 
 .card img {
-    width: 100%;
+    width: 70%;
     height: auto;
     object-fit: cover;
+    border-radius: .5em;
 }
 
 .card--footer .delete {
@@ -449,6 +450,22 @@ section.container {
         grid-template-columns: repeat(3, 1fr);
         width: 80%;
         gap: 2em;
+    }
+
+    .card {
+        width: 100%;
+    }
+
+    .card img {
+        width: 80%;
+    }
+
+    .card--footer {
+        font-size: 1.3em;
+    }
+
+    .card--footer .delete {
+        width: 1.3em;
     }
 
     #form {

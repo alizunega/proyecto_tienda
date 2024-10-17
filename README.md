@@ -10,6 +10,20 @@ En este desafío desarrollamos una aplicación para listar, registrar y eliminar
 
 - Alicia Zuñega - [@alizunega](https://github.com/alizunega)
 
+## Despliegue :package:
+
+[_Tienda Alura_](https://alizunega.github.io/proyecto_tienda/)
+
+## Consideraciones
+
+> [!NOTE]
+>
+> En este proyecto trabajamos instalando Node.js para poder hacer uso de la herramienta npm. Se recomienda su previa instalación si desea verlo en funcionamiento.
+>
+> Revise el formato recomendado para el ingreso de datos, por ejemplo: url de imágenes deben ser url válida, el formato de precio es solo numeros con el '.' como simbolo decimal.
+>
+> El proyecto se encuentra en desarrollo, por lo que puede haber errores o problemas que no se han detectado aun. Sientase libre de comentarlos por dm si lo necesita.
+
 ## Consideraciones para uso del proyecto :memo:
 
 > [!IMPORTANT]
@@ -30,11 +44,11 @@ En este desafío desarrollamos una aplicación para listar, registrar y eliminar
 
 `cd proyecto_tienda`
 
-3- Inicializa el proyecto
+3- Inicializa el proyecto, se sirve del archivo package.json para instalar dependencias necesarias.
 
 `npm init`
 
-4- Instala json-server
+4- Instala json-server de ser necesario.
 
 `npm install -y json-server`
 
@@ -46,14 +60,16 @@ En este desafío desarrollamos una aplicación para listar, registrar y eliminar
 
 `npm run start`
 
-7- Abre el navegador y accede a `http://localhost:5500` levantando el archivo index.html con la Extensión `Live Server`
+7- Levanta el archivo index.html con la Extensión `Live Server` para ver la página en funcionamiento.
 
 8- Puedes interactuar con la aplicación y ver en funcionamiento la página.
 Comprobaras la carga de items desde db.json, podras agregar items y eliminarlos.
 Comprueba también la busqueda por palabra clave.
 
-9- En conectionAPI.js podes cambiar la variable url para probar en forma local con el server en mockAPI.
-Solo debes comentar la url para desarrollo y descomentar la de produccion.
+9- En `conectionAPI.js` podes cambiar la variable `url` para trabajar en forma local con el server fake en `mockAPI`.
+Solo debes comentar la url para desarrollo (aquella con formato localhost:3000) y descomentar la de produccion. Por defecto trabaja con la url del db.json local.
+
+10- Consideración especial: si trabajas en la rama main no funcionará correctamente, recomiendo usar develop para trabajar en local.
 
 ## Estructura de carpetas :open_file_folder:
 
@@ -76,29 +92,8 @@ proyecto_tienda
 └── README.md
 ```
 
-## Despliegue :package:
-
-[_Tienda Alura_](https://alizunega.github.io/proyecto_tienda/)
-
-## Consideraciones
-
-> [!NOTE]
->
-> En este proyecto trabajamos instalando Node.js para poder hacer uso de la herramienta npm. Se recomienda su previa instalación si desea verlo en funcionamiento.
->
-> Revise el formato recomendado para el ingreso de datos, por ejemplo: url de imágenes deben ser url válida, el formato de precio es solo numeros con el '.' como simbolo decimal.
->
-> Puede que en la busqueda se tome en cuenta también la url.
->
-> El proyecto se encuentra en desarrollo, por lo que puede haber errores o problemas que no se han detectado aun. Sientase libre de comentarlos por dm si lo necesita.
-
 ## Construido Con :hammer_and_wrench:
 
-<!-- <p align="center" hidden>
-  <a href="https://skillicons.dev">
-    <img src="https://skillicons.dev/icons?i=html,css,js,nodejs,npm" />
-  </a>
-</p> -->
 <div align="center" background-color="white">
   <img src="https://user-images.githubusercontent.com/25181517/192158954-f88b5814-d510-4564-b285-dff7d6400dad.png" width="60">
   <img src="https://user-images.githubusercontent.com/25181517/183898674-75a4a1b1-f960-4ea9-abcb-637170a00a75.png" width="60">

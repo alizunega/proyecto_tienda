@@ -14,7 +14,7 @@ if (botonBuscar) {
 
 // mostrar formulario de carga de productos
 function mostrarFormulario() {
-  window.location.href = "../../pages/formulario.html";
+  window.location.href = "/proyecto_tienda/pages/formulario.html";
 }
 
 const addProducto = document.getElementById("addProducto");

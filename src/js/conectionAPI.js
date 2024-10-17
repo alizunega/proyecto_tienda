@@ -4,6 +4,7 @@ const url = "https://670fcaf9a85f4164ef2bf249.mockapi.io/products";
 
 // Variable para entorno de desarrollo
 // const url = "http://localhost:3000/products";
+console.log("usted esta conectado a: ", url);
 
 async function conexionAPI() {
   let response = await fetch(url, {
@@ -18,7 +19,7 @@ async function conexionAPI() {
   }
 
   let productosJSON = await response.json();
-  console.log("aca productosJSON", productosJSON);
+  console.log("Resultado del Fetch: ", productosJSON);
   return productosJSON;
 }
 
@@ -36,6 +37,7 @@ async function addProduct(name, price, image) {
   });
 
   let productoJSON = await producto.json();
+  console.log("Producto agregado: ", productoJSON);
   return productoJSON;
 }
 
