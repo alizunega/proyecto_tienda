@@ -46,11 +46,14 @@ En este desafío desarrollamos una aplicación para listar, registrar y eliminar
 
 `npm run start`
 
-7- Abre el navegador y accede a `http://localhost:5500`
+7- Abre el navegador y accede a `http://localhost:5500` levantando el archivo index.html con la Extensión `Live Server`
 
-8- Puedes interactuar con la aplicación y ver en funcionamiento la página. Comprobaras la carga de items desde db.json, podras agregar items y eliminarlos. Comprueba también la busqueda por palabra clave.
+8- Puedes interactuar con la aplicación y ver en funcionamiento la página.
+Comprobaras la carga de items desde db.json, podras agregar items y eliminarlos.
+Comprueba también la busqueda por palabra clave.
 
-9- En conectionAPI.js podes cambiar la variable url para probar en forma local con el server en mockAPI. Solo debes comentar la url para desarrollo y descomentar la de produccion.
+9- En conectionAPI.js podes cambiar la variable url para probar en forma local con el server en mockAPI.
+Solo debes comentar la url para desarrollo y descomentar la de produccion.
 
 ## Estructura de carpetas :open_file_folder:
 
@@ -80,11 +83,12 @@ proyecto_tienda
 ## Consideraciones
 
 > [!NOTE]
+>
 > En este proyecto trabajamos instalando Node.js para poder hacer uso de la herramienta npm. Se recomienda su previa instalación si desea verlo en funcionamiento.
 >
 > Revise el formato recomendado para el ingreso de datos, por ejemplo: url de imágenes deben ser url válida, el formato de precio es solo numeros con el '.' como simbolo decimal.
 >
-> Puede que en la busqueda se tome en cuenta también la url dentro de los parámetros de búsqueda.
+> Puede que en la busqueda se tome en cuenta también la url.
 >
 > El proyecto se encuentra en desarrollo, por lo que puede haber errores o problemas que no se han detectado aun. Sientase libre de comentarlos por dm si lo necesita.
 
