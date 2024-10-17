@@ -190,15 +190,14 @@ section.container {
     grid-template-rows: auto;
     gap: 1rem;
     height: auto;
-    width: 70%;
+    width: 100%;
     text-align: center;
     margin: auto;
     padding-bottom: 2em;
-
 }
 
 .card {
-    background-color: #967896;
+    background-color: rgb(228, 226, 226);
     margin: .8em auto;
     padding: .6em .9em;
     height: auto;
@@ -208,7 +207,7 @@ section.container {
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    width: 100%;
+    width: 90%;
 }
 
 .card:hover {
@@ -220,11 +219,10 @@ section.container {
 .card--footer {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
-    width: 70%;
+    justify-content: space-around;
+    width: 100%;
     height: auto;
-    font-size: 1.2em;
-
+    font-size: 1.5em;
 }
 
 
@@ -235,7 +233,7 @@ section.container {
 }
 
 .card--footer .delete {
-    width: 2em;
+    width: 1.3em;
     text-align: right;
 }
 
@@ -395,7 +393,7 @@ section.container {
 
         grid-template-columns: repeat(2, 1fr);
         align-items: stretch;
-        width: 80%;
+        width: 90%;
 
     }
 

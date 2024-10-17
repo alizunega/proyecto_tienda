@@ -10,15 +10,15 @@ En este desafío desarrollamos una aplicación para listar, registrar y eliminar
 
 - Alicia Zuñega - [@alizunega](https://github.com/alizunega)
 
-## Requerimientos del proyecto :memo:
+## Consideraciones para uso del proyecto :memo:
 
 > [!IMPORTANT]
 >
-> Este proyecto fue desarrollado con el objetivo de cumplir con los requisitos del desafío
+> Este proyecto fue desarrollado con el objetivo de cumplir con los requisitos del desafío.
 >
-> Para poder hacerlo visible utilizaremos un server fake haciendo uso de este recurso (https://my-json-server.typicode.com/)
+> Para poder hacerlo visible utilizaremos un server fake haciendo uso de este recurso (https://mockapi.io/)
 >
-> Al ser un recurso free, contamos con limitaciones. Una de ellas es un máximo de 30 items en la lista de productos. Tenga esto encuenta a la hora de utilizar.
+> Al ser un recurso free, contamos con limitaciones. Por ejemplo, en tiempo de respuesta.
 
 ### Instalación y Uso :computer:
 
@@ -38,13 +38,22 @@ En este desafío desarrollamos una aplicación para listar, registrar y eliminar
 
 `npm install -y json-server`
 
-5- Inicia el servidor
+5- Selecciona la rama develop para trabajar con entorno local
 
-`npx json-server --watch -p 3001 db.json`
+`git checkout develop`
 
-6- Abre el navegador y accede a `http://localhost:5500`
+6- Inicia el servidor
 
-7- Puedes interactuar con la aplicación y ver en funcionamiento la página. Comprobaras la carga de items desde db.json, podras agregar items y eliminarlos. Comprueba también la busqueda por palabra clave.
+`npm run start`
+
+7- Abre el navegador y accede a `http://localhost:5500` levantando el archivo index.html con la Extensión `Live Server`
+
+8- Puedes interactuar con la aplicación y ver en funcionamiento la página.
+Comprobaras la carga de items desde db.json, podras agregar items y eliminarlos.
+Comprueba también la busqueda por palabra clave.
+
+9- En conectionAPI.js podes cambiar la variable url para probar en forma local con el server en mockAPI.
+Solo debes comentar la url para desarrollo y descomentar la de produccion.
 
 ## Estructura de carpetas :open_file_folder:
 
@@ -62,6 +71,7 @@ proyecto_tienda
 │   └── productos
 ├── index.html
 ├── db.json
+├── package.json
 ├── LICENSE
 └── README.md
 ```
@@ -73,11 +83,12 @@ proyecto_tienda
 ## Consideraciones
 
 > [!NOTE]
-> En este proyecto trabajamos instalando node.js para poder hacer uso de la herramienta npm. Se recomienda su previa instalación si desea verlo en funcionamiento.
 >
-> Revise el formato recomendado para el ingreso de datos, por ejemplo: url de imágenes deben ser url válidas, el formato de precio es solo numeros con el '.' como simbolo decimal.
+> En este proyecto trabajamos instalando Node.js para poder hacer uso de la herramienta npm. Se recomienda su previa instalación si desea verlo en funcionamiento.
 >
-> Puede que en la busqueda se tome en cuenta también la url dentro de los parámetros de búsqueda.
+> Revise el formato recomendado para el ingreso de datos, por ejemplo: url de imágenes deben ser url válida, el formato de precio es solo numeros con el '.' como simbolo decimal.
+>
+> Puede que en la busqueda se tome en cuenta también la url.
 >
 > El proyecto se encuentra en desarrollo, por lo que puede haber errores o problemas que no se han detectado aun. Sientase libre de comentarlos por dm si lo necesita.
 
