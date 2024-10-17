@@ -144,22 +144,24 @@ function mostrarError(span, mensaje, mostrar) {
 // funcion eliminacion del producto
 
 // Agrega un evento de click al contenedor
-section.addEventListener("click", async (event) => {
-  // Verifica si el elemento clicado es un botón de eliminar
-  if (event.target.classList.contains("delete")) {
-    const card = event.target.closest(".card"); // Encuentra el elemento card más cercano
-    const idProd = card.dataset.id; // Obtén el id del producto
-    const indLista = listaAPI.findIndex((producto) => producto.id === idProd);
+if (section) {
+  section.addEventListener("click", async (event) => {
+    // Verifica si el elemento clicado es un botón de eliminar
+    if (event.target.classList.contains("delete")) {
+      const card = event.target.closest(".card"); // Encuentra el elemento card más cercano
+      const idProd = card.dataset.id; // Obtén el id del producto
+      const indLista = listaAPI.findIndex((producto) => producto.id === idProd);
 
-    if (indLista !== -1) {
-      if (confirm("¿Está seguro que desea eliminar?")) {
-        await conectionAPI.deleteItem(idProd);
-        listaAPI.splice(indLista, 1);
-        card.remove(); // Remueve la tarjeta del DOM
+      if (indLista !== -1) {
+        if (confirm("¿Está seguro que desea eliminar?")) {
+          await conectionAPI.deleteItem(idProd);
+          listaAPI.splice(indLista, 1);
+          card.remove(); // Remueve la tarjeta del DOM
+        }
       }
     }
-  }
-});
+  });
+}
 
 // document.querySelectorAll(".card").forEach((e) => {
 //   const eliminar = e.querySelector(".delete");
