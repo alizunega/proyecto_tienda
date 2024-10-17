@@ -10,17 +10,15 @@ En este desafío desarrollamos una aplicación para listar, registrar y eliminar
 
 - Alicia Zuñega - [@alizunega](https://github.com/alizunega)
 
-## Requerimientos del proyecto :memo:
+## Consideraciones para uso del proyecto :memo:
 
 > [!IMPORTANT]
 >
 > Este proyecto fue desarrollado con el objetivo de cumplir con los requisitos del desafío.
 >
-> Para poder hacerlo visible utilizaremos un server fake haciendo uso de este recurso (https://my-json-server.typicode.com/)
+> Para poder hacerlo visible utilizaremos un server fake haciendo uso de este recurso (https://mockapi.io/)
 >
-> Al ser un recurso free, contamos con limitaciones. Una de ellas es un máximo de 30 items en la lista de productos. Tenga esto encuenta a la hora de utilizar.
->
-> Por el momento solo es posible listar los productos y buscar según palabra clave. Para probar la funcionalidad de agregar producto, se recomienda clonar el repositorio y levantar con live server.
+> Al ser un recurso free, contamos con limitaciones. Por ejemplo, en tiempo de respuesta.
 
 ### Instalación y Uso :computer:
 
@@ -40,13 +38,19 @@ En este desafío desarrollamos una aplicación para listar, registrar y eliminar
 
 `npm install -y json-server`
 
-5- Inicia el servidor
+5- Selecciona la rama develop para trabajar con entorno local
 
-`npx json-server --watch -p 3001 db.json`
+`git checkout develop`
 
-6- Abre el navegador y accede a `http://localhost:5500`
+6- Inicia el servidor
 
-7- Puedes interactuar con la aplicación y ver en funcionamiento la página. Comprobaras la carga de items desde db.json, podras agregar items y eliminarlos. Comprueba también la busqueda por palabra clave.
+`npm run start`
+
+7- Abre el navegador y accede a `http://localhost:5500`
+
+8- Puedes interactuar con la aplicación y ver en funcionamiento la página. Comprobaras la carga de items desde db.json, podras agregar items y eliminarlos. Comprueba también la busqueda por palabra clave.
+
+9- En conectionAPI.js podes cambiar la variable url para probar en forma local con el server en mockAPI. Solo debes comentar la url para desarrollo y descomentar la de produccion.
 
 ## Estructura de carpetas :open_file_folder:
 
@@ -64,6 +68,7 @@ proyecto_tienda
 │   └── productos
 ├── index.html
 ├── db.json
+├── package.json
 ├── LICENSE
 └── README.md
 ```

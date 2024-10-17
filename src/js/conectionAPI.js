@@ -1,11 +1,8 @@
 // variable para entorno de produccion
-// const url =
-//   "https://my-json-server.typicode.com/alizunega/json-server/products";
-
+//tambien puede usarse para develop pero podria presentar problemas de conexion
 const url = "https://670fcaf9a85f4164ef2bf249.mockapi.io/products";
 
 // Variable para entorno de desarrollo
-
 // const url = "http://localhost:3000/products";
 
 async function conexionAPI() {
