@@ -106,7 +106,7 @@ a {
 }
 
 .header--img {
-    width: 2rem;
+    width: 1.5rem;
 }
 
 .volver_pagina {
@@ -138,7 +138,7 @@ a {
     align-items: stretch;
     font-family: var(--font-texto);
     position: relative;
-    top: 8em;
+    top: 5em;
     padding: 2em;
     flex-grow: 1;
 }

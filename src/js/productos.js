@@ -150,7 +150,7 @@ if (section) {
     if (event.target.classList.contains("delete")) {
       const card = event.target.closest(".card"); // Encuentra el elemento card más cercano
       const idProd = card.dataset.id; // Obtén el id del producto
-      const indLista = listaAPI.findIndex((producto) => producto.id === idProd);
+      const indLista = listaAPI.findIndex((producto) => producto.id == idProd);
 
       if (indLista !== -1) {
         if (confirm("¿Está seguro que desea eliminar?")) {
