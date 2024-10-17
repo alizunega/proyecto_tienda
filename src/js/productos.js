@@ -102,15 +102,11 @@ async function envioForm(evento) {
     await conectionAPI.addProduct(nombre, precio, imagen);
     console.log("Producto cargado correctamente");
     // si todo ha salido bien - carga pagina con el mensaje correspondiente
-    window.location.replace(
-      "/proyecto_tienda/pages/mensajeadd.html?mensaje=ok"
-    );
+    window.location.replace("./pages/mensajeadd.html?mensaje=ok");
   } catch (error) {
     // si hubo un error en la carga - formatea la pagina avisando de ello
     console.log("Hubo un error al cargar el producto");
-    window.location.replace(
-      "/proyecto_tienda/pages/mensajeadd.html?mensaje=bad"
-    );
+    window.location.replace("./pages/mensajeadd.html?mensaje=bad");
     // alert(`No se pudo agregar el producto: ${error.message}`);
   }
 }
@@ -142,20 +138,41 @@ function mostrarError(span, mensaje, mostrar) {
 }
 
 // funcion eliminacion del producto
-document.querySelectorAll(".card").forEach((e) => {
-  const eliminar = e.querySelector(".delete");
-  eliminar.addEventListener("click", async () => {
-    const idProd = e.dataset.id;
+
+// Agrega un evento de click al contenedor
+section.addEventListener("click", async (event) => {
+  // Verifica si el elemento clicado es un botón de eliminar
+  if (event.target.classList.contains("delete")) {
+    const card = event.target.closest(".card"); // Encuentra el elemento card más cercano
+    const idProd = card.dataset.id; // Obtén el id del producto
+    console.log("id del card seleccionado: ", idProd);
     const indLista = listaAPI.findIndex((producto) => producto.id === idProd);
+    console.log("id del producto: ", indLista);
+
     if (indLista !== -1) {
       if (confirm("¿Está seguro que desea eliminar?")) {
         await conectionAPI.deleteItem(idProd);
-        listaAPI.splice(idProd, 1);
-        e.remove();
+        listaAPI.splice(indLista, 1); // Cambié idProd por indLista para eliminar el índice correcto
+        card.remove(); // Remueve la tarjeta del DOM
       }
     }
-  });
+  }
 });
+
+// document.querySelectorAll(".card").forEach((e) => {
+//   const eliminar = e.querySelector(".delete");
+//   eliminar.addEventListener("click", async () => {
+//     const idProd = e.dataset.id;
+//     const indLista = listaAPI.findIndex((producto) => producto.id === idProd);
+//     if (indLista !== -1) {
+//       if (confirm("¿Está seguro que desea eliminar?")) {
+//         await conectionAPI.deleteItem(idProd);
+//         listaAPI.splice(idProd, 1);
+//         e.remove();
+//       }
+//     }
+//   });
+// });
 
 // funcion para buscar segun palabra clave
 // Selecciona el input
@@ -217,10 +234,10 @@ if (mensaje === "ok") {
     <img src="../assets/iconos/added.png" alt="Producto agregado satisfactoriamente">
 </div>
 <div class="buttons--saludo">
-    <a href="/proyecto_tienda/index.html"><img src="../assets/iconos/volver_pagina.png" alt="Volver a pagina principal">Volver
+    <a href="./index.html"><img src="../assets/iconos/volver_pagina.png" alt="Volver a pagina principal">Volver
         a
         pagina principal</a>
-    <a href="/proyecto_tienda/pages/formulario.html">
+    <a href="./pages/formulario.html">
         <img src="../assets/iconos/add_item.png" alt="Agregar mas producto">
         Agregar otro producto
     </a>
@@ -231,10 +248,10 @@ if (mensaje === "ok") {
   <img src="../assets/iconos/error_conection.png" alt="Error al cargar">
   </div>
   <div class="buttons--saludo">
-    <a href="/proyecto_tienda/index.html"><img src="../assets/iconos/volver_pagina.png" alt="Volver a pagina principal">Volver
+    <a href="./index.html"><img src="../assets/iconos/volver_pagina.png" alt="Volver a pagina principal">Volver
         a
         pagina principal</a>
-    <a href="/proyecto_tienda/pages/formulario.html">
+    <a href="./pages/formulario.html">
         <img src="../assets/iconos/add_item.png" alt="Agregar mas producto">
         Agregar otro producto
     </a>
