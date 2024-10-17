@@ -175,12 +175,6 @@
       "image": "https://imgcentauro-a.akamaihd.net/230x230/943137D0.jpg"
     },
     {
-      "id": 30,
-      "name": "Tenis Nike Renew Run",
-      "price": 279.99,
-      "image": "https://imgcentauro-a.akamaihd.net/230x230/9465459P.jpg"
-    },
-    {
       "id": 31,
       "name": "Tenis Infantil Nike Court Borough Low 2",
       "price": 199.99,
@@ -223,12 +217,6 @@
       "image": "https://imgcentauro-a.akamaihd.net/230x230/943137XQ.jpg"
     },
     {
-      "id": 38,
-      "name": "Tenis Asics Patriot 12 Noosa",
-      "price": 199.99,
-      "image": "https://imgcentauro-a.akamaihd.net/230x230/95077714.jpg"
-    },
-    {
       "name": "Tenis Oakley Modoc Low 3.0",
       "price": "78888",
       "image": "https://imgcentauro-a.akamaihd.net/230x230/92601102.jpg",
@@ -251,6 +239,18 @@
       "price": "587",
       "image": "https://imgcentauro-a.akamaihd.net/230x230/95077714.jpg",
       "id": 42
+    },
+    {
+      "name": "Tenis Nike Revolution 5",
+      "price": "876.99",
+      "image": "https://imgcentauro-a.akamaihd.net/230x230/943137XQ.jpg",
+      "id": 43
+    },
+    {
+      "name": "Tenis Asics Patriot 12 Noosa",
+      "price": "345",
+      "image": "https://imgcentauro-a.akamaihd.net/230x230/9507779N.jpg",
+      "id": 44
     }
   ]
 }

@@ -1,9 +1,9 @@
 // variable para entorno de produccion
 //tambien puede usarse para develop pero podria presentar problemas de conexion
-const url = "https://670fcaf9a85f4164ef2bf249.mockapi.io/products";
+// const url = "https://670fcaf9a85f4164ef2bf249.mockapi.io/products";
 
 // Variable para entorno de desarrollo
-// const url = "http://localhost:3000/products";
+const url = "http://localhost:3000/products";
 console.log("usted esta conectado a: ", url);
 
 async function conexionAPI() {
