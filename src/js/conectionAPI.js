@@ -4,6 +4,7 @@
 
 // Variable para entorno de desarrollo
 const url = "http://localhost:3000/products";
+
 console.log("usted esta conectado a: ", url);
 
 async function conexionAPI() {
