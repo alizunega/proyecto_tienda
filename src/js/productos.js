@@ -42,11 +42,18 @@ function renderizarItems(lista) {
       section.appendChild(card);
     });
   } else if (section && lista.length === 0) {
-    main.innerHTML = `<h1>No se encontraron productos</h1>`;
+    main.innerHTML = `<h1>No se encontraron productos</h1><h1>Espere mientras recarga la página</h1>`;
+    setTimeout(() => {
+      document.location.reload();
+    }, 3000);
   } else {
-    document.innerHTML = `<h1> Imposible cargar la página.</h1>`;
+    document.innerHTML = `<h1> Imposible cargar la página.</h1><h1>Intente más tarde.</h1>`;
   }
 }
+
+window.onload = function () {
+  document.getElementById("search-item").focus();
+};
 
 // Funcionalidad de agregar item
 // Trae el formulario y comprueba si se carga la página
@@ -159,25 +166,8 @@ if (section) {
   });
 }
 
-// document.querySelectorAll(".card").forEach((e) => {
-//   const eliminar = e.querySelector(".delete");
-//   eliminar.addEventListener("click", async () => {
-//     const idProd = e.dataset.id;
-//     const indLista = listaAPI.findIndex((producto) => producto.id === idProd);
-//     if (indLista !== -1) {
-//       if (confirm("¿Está seguro que desea eliminar?")) {
-//         await conectionAPI.deleteItem(idProd);
-//         listaAPI.splice(idProd, 1);
-//         e.remove();
-//       }
-//     }
-//   });
-// });
-
 // funcion para buscar segun palabra clave
-// Selecciona el input
 const inputBusqueda = document.getElementById("search-item");
-
 // confirma si el input existe
 if (inputBusqueda) {
   // Evento al presionar la tecla "Enter"
@@ -223,8 +213,7 @@ async function realizarBusqueda() {
   }
 }
 
-// Formateado de pagina de mensaje
-
+// Formateado de pagina de mensaje para carga de item
 const mainMensaje = document.querySelector(".main--mensaje");
 const urlParams = new URLSearchParams(window.location.search);
 const mensaje = urlParams.get("mensaje");

@@ -90,14 +90,14 @@ async function searchProduct(key) {
     if (!response.ok) {
       throw new Error("Error en la respuesta de la red");
     }
-
-    let productosJSON = await response.json(); // Convertir la respuesta a JSON
+    // Trae toda la lista
+    let productosJSON = await response.json();
 
     // Filtrar los productos que coincidan parcialmente con el valor de 'key'
     let productosFiltrados = productosJSON.filter((producto) =>
       producto.name.toLowerCase().includes(key.toLowerCase())
     );
-
+    console.log("existen productos que coinciden: ", productosFiltrados);
     return productosFiltrados.length > 0 ? productosFiltrados : [];
   } catch (error) {
     alert("Hubo un error en la búsqueda: " + error.message);
