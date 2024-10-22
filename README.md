@@ -9,8 +9,8 @@ En este desafío desarrollamos una aplicación para listar (muestra una lista de
 ## Desarrollado por: :black_nib:
 
 - Alicia Zuñega  
-  Perfil GitHub [@alizunega](https://github.com/alizunega)  
-  Mail [ali.zunega@gmail.com](mailto:ali.zunega@gmail.com)
+  Perfil GitHub :woman_technologist: [@alizunega](https://github.com/alizunega)  
+  Mail :envelope: [ali.zunega@gmail.com](mailto:ali.zunega@gmail.com)
 
 ## Despliegue :package:
 
@@ -108,3 +108,36 @@ proyecto_tienda
   <img src="https://user-images.githubusercontent.com/25181517/183568594-85e280a7-0d7e-4d1a-9028-c8c2209e073c.png" width="60">
   <img src="https://user-images.githubusercontent.com/25181517/121401671-49102800-c959-11eb-9f6f-74d49a5e1774.png" width="50">
 </div>
+
+## Capturas ejemplo de uso :camera:
+
+<section style="display: flex; flex-direction: column; gap: 20px;">
+    <figure>
+      <img src="./assets/img_capturas/captura_prueba_tienda1.png" alt="Carga items en pagina">
+      <figcaption>Ejemplo visualizacion: Pantalla carga correcta de items desde API. Muestra url desde donde se sirve.</figcaption>
+    </figure>
+    <figure>
+      <img src="./assets/img_capturas/cap_botones_acciones.png" alt="Botones busqueda y carga de nuevo item">
+      <figcaption>Ejemplo visualizacion: Botones para buscar un item y cargar nuevo item.</figcaption>
+    </figure>
+    <figure>
+      <img src="./assets/img_capturas/captura_search.png" alt="Busqueda por palabra clave">
+      <figcaption>Ejemplo visualizacion: Búsqueda de item por palabra clave. Resultado en consola.</figcaption>
+    </figure>
+    <figure>
+      <img src="./assets/img_capturas/cap_formulario.png" alt="Formulario de carga">
+      <figcaption>Ejemplo de visualizacion: Formulario carga nuevo item.</figcaption>
+    </figure>
+    <figure>
+      <img src="./assets/img_capturas/cap_carga_item.png" alt="Ejemplo carga nuevo item">
+      <figcaption>Ejemplo de uso: Carga de datos en formulario.</figcaption>
+    </figure>
+    <figure>
+      <img src="./assets/img_capturas/cap_carga_ok.png" alt="Carga correcta de item">
+      <figcaption>Ejemplo de visualizacion: Página de carga correcta. Resultado en consola.</figcaption>
+    </figure>
+    <figure>
+      <img src="./assets/img_capturas/cap_consola_eliminacion.png" alt="Eliminacion de item">
+      <figcaption>Ejemplo de visualizacion: Eliminación de un item.</figcaption>
+    </figure>
+</section>

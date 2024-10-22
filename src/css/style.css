@@ -135,6 +135,7 @@ a {
     flex-direction: column;
     width: 100%;
     height: auto;
+    min-height: 100dvh;
     align-items: stretch;
     font-family: var(--font-texto);
     position: relative;
@@ -184,12 +185,18 @@ a {
     padding: 0;
 }
 
+.main h1 {
+    display: inline-flex;
+    align-self: center;
+}
+
+/* Estilos para contenedor y cards */
 section.container {
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: auto;
     gap: 1rem;
-    height: auto;
+    /* height: auto; */
     width: 90%;
     text-align: center;
     margin: auto;
@@ -203,11 +210,15 @@ section.container {
     height: auto;
     min-height: 15em;
     border-radius: .4em;
-    display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
     width: 80%;
+    display: none;
+}
+
+.card.show {
+    display: flex;
 }
 
 .card:hover {
@@ -238,9 +249,26 @@ section.container {
     text-align: right;
 }
 
-.main h1 {
-    display: inline-flex;
-    align-self: center;
+
+.button-ver-mas {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 2em auto;
+    padding: 1em 1.5em;
+    width: 20em;
+    border-radius: 0.5em;
+    background-color: rgb(139, 139, 245);
+    color: white;
+    font-size: 1em;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.button-ver-mas:hover {
+    background-color: #0056b3;
 }
 
 
@@ -292,17 +320,14 @@ section.container {
 .form--item-content {
     display: flex;
     flex-direction: row;
-    /* Label e input en la misma fila */
     justify-content: space-between;
     align-items: center;
-    /* Alinea verticalmente el contenido */
     width: 100%;
 }
 
 .form--item {
     display: flex;
     flex-direction: column;
-    /* Mantener los hijos en columna para que el span quede debajo */
     padding: .6em .7em;
     width: 100%;
 }

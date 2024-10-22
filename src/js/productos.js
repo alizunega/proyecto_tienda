@@ -41,6 +41,7 @@ function renderizarItems(lista) {
       card.appendChild(cardFooter);
       section.appendChild(card);
     });
+    mostrarMasItems();
   } else if (section && lista.length === 0) {
     main.innerHTML = `<h1>No se encontraron productos</h1><h1>Espere mientras recarga la página</h1>`;
     setTimeout(() => {
@@ -54,6 +55,38 @@ function renderizarItems(lista) {
 window.onload = function () {
   document.getElementById("search-item").focus();
 };
+
+// Función que configura el comportamiento del botón "Ver más"
+function mostrarMasItems() {
+  const items = document.querySelectorAll(".card");
+  const verMasBtn = document.querySelector(".button-ver-mas");
+  let itemsMostrados = 10; // Inicialmente mostramos 10
+
+  // si hay elementos en la lista, muestra el boton
+  if (items.length !== 0) {
+    verMasBtn.style.display = "flex";
+  }
+
+  // Mostrar los primeros 10 ítems
+  for (let i = 0; i < itemsMostrados; i++) {
+    items[i].classList.add("show");
+  }
+
+  // Event listener para mostrar más ítems al hacer clic
+  verMasBtn.addEventListener("click", function () {
+    const nuevosItems = itemsMostrados + 10;
+
+    for (let i = itemsMostrados; i < nuevosItems && i < items.length; i++) {
+      items[i].classList.add("show");
+    }
+
+    itemsMostrados += 10;
+
+    if (itemsMostrados >= items.length) {
+      verMasBtn.style.display = "none"; // Oculta el botón si ya no hay más ítems
+    }
+  });
+}
 
 // Funcionalidad de agregar item
 // Trae el formulario y comprueba si se carga la página
