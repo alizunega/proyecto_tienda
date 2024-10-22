@@ -17,6 +17,7 @@ const section = document.querySelector(".container");
 renderizarItems(listaAPI);
 
 function renderizarItems(lista) {
+  // existe el contenedor en DOM y la lista tiene items
   if (section && lista.length > 0) {
     lista.forEach((element) => {
       let card = document.createElement("div");
@@ -41,12 +42,21 @@ function renderizarItems(lista) {
       card.appendChild(cardFooter);
       section.appendChild(card);
     });
+    // existe el contenedor en el DOM y la lista no tiene items
   } else if (section && lista.length === 0) {
-    main.innerHTML = `<h1>No se encontraron productos</h1>`;
+    main.innerHTML = `<h1>No se encontraron productos</h1><h1>Espere mientras recarga la página</h1>`;
+    setTimeout(() => {
+      document.location.reload();
+    }, 3000);
   } else {
-    document.innerHTML = `<h1> Imposible cargar la página.</h1>`;
+    document.innerHTML = `<h1> Imposible cargar la página.</h1><h1>Intente más tarde.</h1>`;
   }
 }
+
+window.onload = function () {
+  // al cargar la pagina pone el foco en el input de busqueda
+  document.getElementById("search-item").focus();
+};
 
 // Funcionalidad de agregar item
 // Trae el formulario y comprueba si se carga la página
@@ -59,6 +69,7 @@ if (formu) {
 // Función de manejo de envío de formulario
 
 // Obtiene los datos de los campos del formulario de carga
+// quitando espacios en blanco al inicio y al final de cada string
 function getFormData() {
   return {
     nombre: document.querySelector("#name").value.trim(),
@@ -141,8 +152,7 @@ function mostrarError(span, mensaje, mostrar) {
   }
 }
 
-// funcion eliminacion del producto
-
+// Funcion eliminacion del producto
 // Agrega un evento de click al contenedor
 if (section) {
   section.addEventListener("click", async (event) => {
@@ -151,8 +161,9 @@ if (section) {
       const card = event.target.closest(".card"); // Encuentra el elemento card más cercano
       const idProd = card.dataset.id; // Obtén el id del producto
       const indLista = listaAPI.findIndex((producto) => producto.id == idProd);
-
+      console.log(`idProd es ${idProd} y indLista es ${indLista}`);
       if (indLista !== -1) {
+        //muestra mensaje de error para desprevenidos
         if (confirm("¿Está seguro que desea eliminar?")) {
           await conectionAPI.deleteItem(idProd);
           listaAPI.splice(indLista, 1);
@@ -163,25 +174,8 @@ if (section) {
   });
 }
 
-// document.querySelectorAll(".card").forEach((e) => {
-//   const eliminar = e.querySelector(".delete");
-//   eliminar.addEventListener("click", async () => {
-//     const idProd = e.dataset.id;
-//     const indLista = listaAPI.findIndex((producto) => producto.id === idProd);
-//     if (indLista !== -1) {
-//       if (confirm("¿Está seguro que desea eliminar?")) {
-//         await conectionAPI.deleteItem(idProd);
-//         listaAPI.splice(idProd, 1);
-//         e.remove();
-//       }
-//     }
-//   });
-// });
-
 // funcion para buscar segun palabra clave
-// Selecciona el input
 const inputBusqueda = document.getElementById("search-item");
-
 // confirma si el input existe
 if (inputBusqueda) {
   // Evento al presionar la tecla "Enter"
@@ -227,8 +221,7 @@ async function realizarBusqueda() {
   }
 }
 
-// Formateado de pagina de mensaje
-
+// Formateado de pagina de mensaje para carga de item
 const mainMensaje = document.querySelector(".main--mensaje");
 const urlParams = new URLSearchParams(window.location.search);
 const mensaje = urlParams.get("mensaje");
