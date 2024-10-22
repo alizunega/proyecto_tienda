@@ -112,31 +112,31 @@ proyecto_tienda
 ## Capturas ejemplo de uso :camera:
 
 <section>
-    <figure padding-bottom="25px">
+    <figure style="padding-bottom: 20px;">
       <img src="./assets/img_capturas/captura_prueba_tienda1.png" alt="Carga items en pagina">
       <figcaption>Ejemplo visualizacion: Pantalla carga correcta de items desde API. Muestra url desde donde se sirve.</figcaption>
     </figure>
-    <figure padding-bottom="25px">
+    <figure style="padding-bottom: 20px;">
       <img src="./assets/img_capturas/cap_botones_acciones.png" alt="Botones busqueda y carga de nuevo item">
       <figcaption>Ejemplo visualizacion: Botones para buscar un item y cargar nuevo item.</figcaption>
     </figure>
-    <figure padding-bottom="25px">
+    <figure style="padding-bottom: 20px;">
       <img src="./assets/img_capturas/captura_search.png" alt="Busqueda por palabra clave">
       <figcaption>Ejemplo visualizacion: Búsqueda de item por palabra clave. Resultado en consola.</figcaption>
     </figure>
-    <figure padding-bottom="25px">
+    <figure style="padding-bottom: 20px;">
       <img src="./assets/img_capturas/cap_formulario.png" alt="Formulario de carga">
       <figcaption>Ejemplo de visualizacion: Formulario carga nuevo item.</figcaption>
     </figure>
-    <figure padding-bottom="25px">
+    <figure style="padding-bottom: 20px;">
       <img src="./assets/img_capturas/cap_carga_item.png" alt="Ejemplo carga nuevo item">
       <figcaption>Ejemplo de uso: Carga de datos en formulario.</figcaption>
     </figure>
-    <figure padding-bottom="25px">
+    <figure style="padding-bottom: 20px;">
       <img src="./assets/img_capturas/cap_carga_ok.png" alt="Carga correcta de item">
       <figcaption>Ejemplo de visualizacion: Página de carga correcta. Resultado en consola.</figcaption>
     </figure>
-    <figure padding-bottom="25px">
+    <figure style="padding-bottom: 20px;">
       <img src="./assets/img_capturas/cap_consola_eliminacion.png" alt="Eliminacion de item">
       <figcaption>Ejemplo de visualizacion: Eliminación de un item.</figcaption>
     </figure>
