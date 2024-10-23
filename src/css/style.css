@@ -251,12 +251,12 @@ section.container {
 
 
 .button-ver-mas {
-    display: flex;
+    display: inline;
     justify-content: center;
     align-items: center;
     margin: 2em auto;
-    padding: 1em 1em;
-    width: 20em;
+    padding: 1em 1.5em;
+    width: 15em;
     border-radius: 0.5em;
     background-color: var(--color-background-footer);
     color: white;
@@ -271,9 +271,9 @@ section.container {
     background-color: #0056b3;
 }
 
-.icono-button {
+img.icono-button {
     width: 3em;
-    padding-right: 1em;
+    padding-right: 1.5em;
 }
 
 /* Fin Estilos grilla productos */
