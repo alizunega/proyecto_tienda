@@ -59,6 +59,13 @@ a {
     padding: 0;
 }
 
+.container--div {
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    gap: 1rem;
+    min-height: 100dvh;
+}
+
 /* Estilos header */
 .header {
     display: inline;
@@ -140,7 +147,8 @@ a {
     font-family: var(--font-texto);
     position: relative;
     top: 5em;
-    padding: 2em;
+    padding-top: 3em;
+    padding-bottom: 5em;
     flex-grow: 1;
 }
 
@@ -201,6 +209,7 @@ section.container {
     text-align: center;
     margin: auto;
     padding-bottom: 2em;
+    min-height: auto;
 }
 
 .card {
@@ -416,18 +425,21 @@ img.icono-button {
 /* Fin Estilos footer */
 
 /* Estilos para medianos */
-@media (min-width: 769px) and (max-width: 1024px) {
+@media (min-width: 767px) and (max-width: 1023px) {
     .header--list {
         text-align: center;
         font-size: 1.8vw
     }
 
-    section.container {
+    .header h1 {
+        display: block;
+        font-size: 1em;
+    }
 
+    section.container {
         grid-template-columns: repeat(2, 1fr);
         align-items: stretch;
         width: 90%;
-
     }
 
     #form {
@@ -564,12 +576,12 @@ img.icono-button {
         flex-flow: row nowrap;
         justify-content: space-evenly;
         height: auto;
-        padding-top: 1em;
+        padding: 1em;
+        position: fixed;
     }
 
     .acciones--item span {
         display: inline;
     }
-
 
 }

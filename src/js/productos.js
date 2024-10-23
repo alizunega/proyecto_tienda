@@ -246,12 +246,16 @@ if (inputBusqueda) {
   inputBusqueda.addEventListener("input", async () => {
     if (inputBusqueda.value === "") {
       // Llama a la función que carga todos los elementos
-      botonAdd.style.display = "flex";
+      if (botonAdd) {
+        botonAdd.style.display = "flex";
+      }
+
       section.innerHTML = "";
       renderizarItems(listaAPI);
-    }
-    if (botonAdd) {
-      botonAdd.style.display = "none";
+    } else {
+      if (botonAdd) {
+        botonAdd.style.display = "none";
+      }
     }
   });
 } else {
