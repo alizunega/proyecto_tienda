@@ -146,8 +146,9 @@ a {
     align-items: stretch;
     font-family: var(--font-texto);
     position: relative;
-    top: 8em;
-    padding: 2em;
+    top: 5em;
+    padding-top: 3em;
+    padding-bottom: 5em;
     flex-grow: 1;
 }
 
@@ -257,11 +258,32 @@ section.container {
     text-align: right;
 }
 
-.main h1 {
-    display: inline-flex;
-    align-self: center;
+
+.button-ver-mas {
+    display: inline;
+    justify-content: center;
+    align-items: center;
+    margin: 2em auto;
+    padding: 1em 1.5em;
+    width: 15em;
+    border-radius: 0.5em;
+    background-color: var(--color-background-footer);
+    color: white;
+    font-size: 1em;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
+.button-ver-mas:hover {
+    background-color: #0056b3;
+}
+
+img.icono-button {
+    width: 3em;
+    padding-right: 1.5em;
+}
 
 /* Fin Estilos grilla productos */
 
@@ -311,17 +333,21 @@ section.container {
 .form--item-content {
     display: flex;
     flex-direction: row;
+    /* Label e input en la misma fila */
     justify-content: space-between;
     align-items: center;
+    /* Alinea verticalmente el contenido */
     width: 100%;
 }
 
 .form--item {
     display: flex;
     flex-direction: column;
+    /* Mantener los hijos en columna para que el span quede debajo */
     padding: .6em .7em;
     width: 100%;
 }
+
 
 .form--item label {
     margin-right: 1em;
