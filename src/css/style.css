@@ -255,7 +255,7 @@ section.container {
     justify-content: center;
     align-items: center;
     margin: 2em auto;
-    padding: 1em 1.5em;
+    padding: 1em 1em;
     width: 20em;
     border-radius: 0.5em;
     background-color: var(--color-background-footer);
@@ -271,6 +271,10 @@ section.container {
     background-color: #0056b3;
 }
 
+.icono-button {
+    width: 3em;
+    padding-right: 1em;
+}
 
 /* Fin Estilos grilla productos */
 
@@ -445,7 +449,6 @@ section.container {
     }
 
     #form button {
-
         width: 6em;
         margin-top: .2em;
         padding: .3em .6em;
@@ -455,7 +458,7 @@ section.container {
 
 
 /* estilos para desktop */
-@media (min-width: 1025px) {
+@media (min-width: 1024px) {
 
     .header--list {
         color: white;

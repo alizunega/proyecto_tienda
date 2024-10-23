@@ -37,7 +37,7 @@ async function addProduct(name, price, image) {
   });
 
   let productoJSON = await producto.json();
-  console.log("Producto agregado: ", productoJSON);
+
   return productoJSON;
 }
 
@@ -68,8 +68,6 @@ async function deleteItem(id) {
       },
     });
 
-    console.log("la respuesta es: ", response);
-
     if (response.ok) {
       alert(`Elemento eliminado con éxito`);
     } else {
@@ -96,6 +94,7 @@ async function searchProduct(key) {
     let productosFiltrados = productosJSON.filter((producto) =>
       producto.name.toLowerCase().includes(key.toLowerCase())
     );
+    console.log(`productos que coinciden: ${productosFiltrados.length}`);
 
     return productosFiltrados.length > 0 ? productosFiltrados : [];
   } catch (error) {
