@@ -1,3 +1,5 @@
+// funcion busqueda de un producto segun palabra clave
+
 // mostrar formulario de carga de productos
 function mostrarFormulario() {
   window.location.href = "./pages/formulario.html";

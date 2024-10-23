@@ -17,6 +17,7 @@ const section = document.querySelector(".container");
 renderizarItems(listaAPI);
 
 function renderizarItems(lista) {
+  // existe el contenedor en DOM y la lista tiene items
   if (section && lista && lista.length > 0) {
     lista.forEach((element) => {
       let card = document.createElement("div");
@@ -44,6 +45,7 @@ function renderizarItems(lista) {
     });
 
     mostrarMasItems();
+    // existe el contenedor en el DOM y la lista no tiene items
   } else if (section && lista.length === 0) {
     main.innerHTML = `<h1>No se encontraron productos</h1><h1>Espere mientras recarga la página</h1>`;
     setTimeout(() => {
@@ -97,6 +99,7 @@ if (formu) {
 
 // Función de manejo de envío de formulario
 // Obtiene los datos de los campos del formulario de carga
+// quitando espacios en blanco al inicio y al final de cada string
 function getFormData() {
   return {
     nombre: document.querySelector("#name").value.trim(),
@@ -175,7 +178,7 @@ function mostrarError(span, mensaje, mostrar) {
   }
 }
 
-// funcion eliminacion del producto
+// Funcion eliminacion del producto
 // Agrega un evento de click al contenedor
 if (section) {
   section.addEventListener("click", async (event) => {
@@ -186,6 +189,7 @@ if (section) {
       const indLista = listaAPI.findIndex((producto) => producto.id == idProd);
       console.log(`idProd es ${idProd} y indLista es ${indLista}`);
       if (indLista !== -1) {
+        //muestra mensaje de error para desprevenidos
         if (confirm("¿Está seguro que desea eliminar?")) {
           await conectionAPI.deleteItem(idProd);
           listaAPI.splice(indLista, 1);
@@ -239,9 +243,17 @@ if (inputBusqueda) {
 
     if (inputBusqueda.value === "") {
       // Llama a la función que carga todos los elementos
+      if (botonAdd) {
+        botonAdd.style.display = "flex";
+      }
+
       section.innerHTML = "";
       botonAdd.style.display = "flex";
       renderizarItems(listaAPI);
+    } else {
+      if (botonAdd) {
+        botonAdd.style.display = "none";
+      }
     }
   });
 } else {

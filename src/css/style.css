@@ -59,6 +59,13 @@ a {
     padding: 0;
 }
 
+.container--div {
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    gap: 1rem;
+    min-height: 100dvh;
+}
+
 /* Estilos header */
 .header {
     display: inline;
@@ -139,7 +146,7 @@ a {
     align-items: stretch;
     font-family: var(--font-texto);
     position: relative;
-    top: 5em;
+    top: 8em;
     padding: 2em;
     flex-grow: 1;
 }
@@ -201,6 +208,7 @@ section.container {
     text-align: center;
     margin: auto;
     padding-bottom: 2em;
+    min-height: auto;
 }
 
 .card {
@@ -249,27 +257,11 @@ section.container {
     text-align: right;
 }
 
-
-.button-ver-mas {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 2em auto;
-    padding: 1em 1.5em;
-    width: 20em;
-    border-radius: 0.5em;
-    background-color: rgb(139, 139, 245);
-    color: white;
-    font-size: 1em;
-    font-weight: bold;
-    border: none;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+.main h1 {
+    display: inline-flex;
+    align-self: center;
 }
 
-.button-ver-mas:hover {
-    background-color: #0056b3;
-}
 
 /* Fin Estilos grilla productos */
 
@@ -407,18 +399,21 @@ section.container {
 /* Fin Estilos footer */
 
 /* Estilos para medianos */
-@media (min-width: 769px) and (max-width: 1024px) {
+@media (min-width: 767px) and (max-width: 1023px) {
     .header--list {
         text-align: center;
         font-size: 1.8vw
     }
 
-    section.container {
+    .header h1 {
+        display: block;
+        font-size: 1em;
+    }
 
+    section.container {
         grid-template-columns: repeat(2, 1fr);
         align-items: stretch;
         width: 90%;
-
     }
 
     #form {
@@ -440,7 +435,6 @@ section.container {
     }
 
     #form button {
-
         width: 6em;
         margin-top: .2em;
         padding: .3em .6em;
@@ -556,12 +550,12 @@ section.container {
         flex-flow: row nowrap;
         justify-content: space-evenly;
         height: auto;
-        padding-top: 1em;
+        padding: 1em;
+        position: fixed;
     }
 
     .acciones--item span {
         display: inline;
     }
-
 
 }
