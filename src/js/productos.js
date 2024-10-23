@@ -244,13 +244,14 @@ if (inputBusqueda) {
 
   // Evento para detectar cambios en el input
   inputBusqueda.addEventListener("input", async () => {
-    botonAdd.style.display = "none";
-
     if (inputBusqueda.value === "") {
       // Llama a la función que carga todos los elementos
-      section.innerHTML = "";
       botonAdd.style.display = "flex";
+      section.innerHTML = "";
       renderizarItems(listaAPI);
+    }
+    if (botonAdd) {
+      botonAdd.style.display = "none";
     }
   });
 } else {
