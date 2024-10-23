@@ -450,7 +450,7 @@ section.container {
 
 
 /* estilos para desktop */
-@media (min-width: 1025px) {
+@media (min-width: 1024px) {
 
     .header--list {
         color: white;

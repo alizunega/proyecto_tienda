@@ -17,7 +17,7 @@ const section = document.querySelector(".container");
 renderizarItems(listaAPI);
 
 function renderizarItems(lista) {
-  if (section && lista.length > 0) {
+  if (section && lista && lista.length > 0) {
     lista.forEach((element) => {
       let card = document.createElement("div");
       card.className = "card";
@@ -30,6 +30,7 @@ function renderizarItems(lista) {
       precio.textContent = `$ ${element.price}`;
       let imagen = document.createElement("img");
       imagen.src = `${element.image}`;
+      imagen.alt = `Imagen ${element.name}`;
       let buttonDel = document.createElement("img");
       buttonDel.src = "./assets/iconos/trash-can-regular.svg";
       buttonDel.alt = "Eliminar Item";
@@ -41,6 +42,7 @@ function renderizarItems(lista) {
       card.appendChild(cardFooter);
       section.appendChild(card);
     });
+
     mostrarMasItems();
   } else if (section && lista.length === 0) {
     main.innerHTML = `<h1>No se encontraron productos</h1><h1>Espere mientras recarga la página</h1>`;
@@ -51,10 +53,6 @@ function renderizarItems(lista) {
     document.innerHTML = `<h1> Imposible cargar la página.</h1><h1>Intente más tarde.</h1>`;
   }
 }
-
-window.onload = function () {
-  document.getElementById("search-item").focus();
-};
 
 // Función que configura el comportamiento del botón "Ver más"
 function mostrarMasItems() {
@@ -68,7 +66,7 @@ function mostrarMasItems() {
   }
 
   // Mostrar los primeros 10 ítems
-  for (let i = 0; i < itemsMostrados; i++) {
+  for (let i = 0; i < Math.min(itemsMostrados, items.length); i++) {
     items[i].classList.add("show");
   }
 
@@ -76,14 +74,15 @@ function mostrarMasItems() {
   verMasBtn.addEventListener("click", function () {
     const nuevosItems = itemsMostrados + 10;
 
-    for (let i = itemsMostrados; i < nuevosItems && i < items.length; i++) {
+    for (let i = itemsMostrados; i < Math.min(nuevosItems, items.length); i++) {
       items[i].classList.add("show");
     }
 
     itemsMostrados += 10;
 
     if (itemsMostrados >= items.length) {
-      verMasBtn.style.display = "none"; // Oculta el botón si ya no hay más ítems
+      // Oculta el botón si ya no hay más ítems
+      verMasBtn.style.display = "none";
     }
   });
 }
@@ -97,7 +96,6 @@ if (formu) {
 }
 
 // Función de manejo de envío de formulario
-
 // Obtiene los datos de los campos del formulario de carga
 function getFormData() {
   return {
@@ -178,7 +176,6 @@ function mostrarError(span, mensaje, mostrar) {
 }
 
 // funcion eliminacion del producto
-
 // Agrega un evento de click al contenedor
 if (section) {
   section.addEventListener("click", async (event) => {
@@ -200,22 +197,50 @@ if (section) {
 }
 
 // funcion para buscar segun palabra clave
+const botonAdd = document.querySelector(".boton-add");
+const botonBuscar = document.querySelector("#botonBuscar");
 const inputBusqueda = document.getElementById("search-item");
-// confirma si el input existe
+
+if (botonBuscar) {
+  botonBuscar.addEventListener("click", () => {
+    inputBusqueda.style.display = "inline";
+  });
+}
+
+// Confirma si el input existe
 if (inputBusqueda) {
   // Evento al presionar la tecla "Enter"
-  inputBusqueda.addEventListener("keydown", async (event) => {
+  inputBusqueda.addEventListener("keydown", function (event) {
     if (event.key === "Enter") {
-      const listaBuscada = await realizarBusqueda();
-      section.innerHTML = "";
-      renderizarItems(listaBuscada);
+      manejoBusqueda();
     }
   });
+
+  // Evento al presionar el boton de busqueda
+  document
+    .getElementById("botonBuscar")
+    .addEventListener("click", manejoBusqueda);
+
+  async function manejoBusqueda() {
+    const nameBuscado = inputBusqueda.value.trim(); // Obtener el valor del input y eliminar espacios
+    if (!nameBuscado) {
+      // Si el input está vacío, no hacer nada
+      return;
+    }
+
+    const listaBuscada = await realizarBusqueda(nameBuscado);
+    section.innerHTML = "";
+    renderizarItems(listaBuscada);
+  }
+
   // Evento para detectar cambios en el input
   inputBusqueda.addEventListener("input", async () => {
+    botonAdd.style.display = "none";
+
     if (inputBusqueda.value === "") {
-      // llama a la función que carga todos los elementos
+      // Llama a la función que carga todos los elementos
       section.innerHTML = "";
+      botonAdd.style.display = "flex";
       renderizarItems(listaAPI);
     }
   });
@@ -225,13 +250,13 @@ if (inputBusqueda) {
   }
 }
 
-async function realizarBusqueda() {
-  const nameBuscado = inputBusqueda.value.toLowerCase(); // obtenemos el valor del input
-  console.log(nameBuscado);
+async function realizarBusqueda(nameBuscado) {
+  console.log("palabra buscada: ", nameBuscado);
 
   if (nameBuscado) {
     try {
       const listaBuscada = await conectionAPI.searchProduct(nameBuscado); // Espera la respuesta
+      console.log("productos: ", listaBuscada);
 
       // Verifica si la listaBuscada no es undefined
       if (listaBuscada) {

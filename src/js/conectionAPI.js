@@ -97,7 +97,7 @@ async function searchProduct(key) {
     let productosFiltrados = productosJSON.filter((producto) =>
       producto.name.toLowerCase().includes(key.toLowerCase())
     );
-    console.log("existen productos que coinciden: ", productosFiltrados);
+    console.log(`productos que coinciden: ${productosFiltrados.length}`);
     return productosFiltrados.length > 0 ? productosFiltrados : [];
   } catch (error) {
     alert("Hubo un error en la búsqueda: " + error.message);
