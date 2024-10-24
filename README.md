@@ -48,35 +48,31 @@ En este desafío desarrollamos una aplicación para listar (muestra una lista de
 
 `cd proyecto_tienda`
 
-3- Inicializa el proyecto, se sirve del archivo package.json para instalar dependencias necesarias.
+3- Instala dependencias necesarias segun `package.json`
 
-`npm init`
+`npm install`
 
-4- Instala json-server de ser necesario.
-
-`npm install -y json-server`
-
-5- Selecciona la rama develop para trabajar con entorno local
+4- Selecciona la rama develop para trabajar con entorno local
 
 `git checkout develop`
 
-6- Inicia el servidor
+5- Inicia el servidor
 
 `npm run start`
 
-7- Levanta el archivo index.html con la Extensión `Live Server` para ver la página en funcionamiento.
+6- Levanta el archivo index.html con la Extensión `Live Server` para ver la página en funcionamiento.
 
-8- Puedes interactuar con la aplicación y ver en funcionamiento la página.
+7- Puedes interactuar con la aplicación y ver en funcionamiento la página.
 Comprobaras la carga de items desde db.json, podras agregar items y eliminarlos.
 Comprueba también la busqueda por palabra clave.
 
-9- En `conectionAPI.js`, puedes modificar la constante `url` para trabajar localmente con el servidor simulado en `mockAPI`. Para ello, simplemente comenta la URL de desarrollo (la que tiene el formato `localhost:3000`) y descomenta la de producción. Por defecto, la aplicación utiliza la URL del archivo `db.json` local.
+8- En `conectionAPI.js`, puedes modificar la constante `url` para trabajar localmente con el servidor simulado en `mockAPI`. Para ello, simplemente comenta la URL de desarrollo (la que tiene el formato `localhost:3000`) y descomenta la de producción. Por defecto, la aplicación utiliza la URL del archivo `db.json` local.
 
 Es importante destacar que, aunque estés ejecutando la página desde tu entorno local, la aplicación puede estar configurada para consumir datos desde una API remota (en este caso, `mockAPI`). Esto permite simular interacciones con un servidor real mientras desarrollas y pruebas tu aplicación.
 
 En ese caso el paso 6 no será necesario.
 
-10- Consideración especial: si trabajas en la rama `main` no funcionará correctamente, recomiendo usar develop para trabajar en local. `main` es exclusivo para entorno de producción.
+9- Consideración especial: si trabajas en la rama `main` no funcionará correctamente, recomiendo usar `develop` para trabajar en local. `main` es exclusivo para entorno de producción.
 
 ## Estructura de carpetas :open_file_folder:
 

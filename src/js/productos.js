@@ -98,7 +98,6 @@ if (formu) {
 }
 
 // Función de manejo de envío de formulario
-
 // Obtiene los datos de los campos del formulario de carga
 // quitando espacios en blanco al inicio y al final de cada string
 function getFormData() {
