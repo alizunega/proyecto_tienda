@@ -127,13 +127,14 @@ async function envioForm(evento) {
   if (!precioValido(precio)) {
     mostrarError(
       errores[1],
-      "El precio ingresado no es válido. El formato debe ser: 100.00"
+      "El precio ingresado no es válido. El formato debe ser: 100.00",
+      true
     );
     return;
   }
 
   if (!isValidUrl(imagen)) {
-    mostrarError(errores[2], "La url de la imagen no es válida");
+    mostrarError(errores[2], "La url de la imagen no es válida", true);
     return;
   }
 
@@ -168,8 +169,15 @@ function precioValido(precio) {
 
 // Comprueba si la URL de imagen tiene formato correcto
 function isValidUrl(url) {
-  const regex =
-    /^(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?$/;
+  const regex = new RegExp(
+    "^(https?:\\/\\/)" + // Asegura que tenga http:// o https://
+      "((([a-zA-Z\\d]([a-zA-Z\\d-]*[a-zA-Z\\d])*)\\.?)+[a-zA-Z]{2,}|localhost)" + // Dominio o localhost
+      "(\\:\\d{2,5})?" + // Puerto opcional
+      "(\\/[-a-zA-Z\\d%@_.~+&:]*)*" + // Ruta opcional
+      "(\\.(jpg|jpeg|png|gif|bmp|webp))?" + // Extensión de imagen opcional
+      "(\\?[-a-zA-Z\\d%@_.~+&:=%]*)?$", // Parámetros opcionales (como ?width=1200&height=1200)
+    "i" // Ignora mayúsculas/minúsculas
+  );
   return regex.test(url);
 }
 

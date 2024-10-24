@@ -59,11 +59,11 @@ a {
     padding: 0;
 }
 
-.container--div {
+/* .container--div {
     display: grid;
     grid-template-rows: auto 1fr auto;
     min-height: 100dvh;
-}
+} */
 
 /* Estilos header */
 .header {
@@ -112,11 +112,11 @@ a {
 }
 
 .header--img {
-    width: 1.5rem;
+    width: 1.3rem;
 }
 
 .volver_pagina {
-    width: 3rem;
+    width: 1.8rem;
     position: relative;
 }
 
@@ -149,6 +149,7 @@ a {
     padding-top: 3em;
     padding-bottom: 5em;
     flex-grow: 1;
+
 }
 
 /*  Estilos pagina producto cargado */
