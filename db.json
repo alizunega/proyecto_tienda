@@ -263,6 +263,18 @@
       "price": "888.99",
       "image": "https://cdn-icons-png.flaticon.com/512/7690/7690611.png",
       "id": 46
+    },
+    {
+      "name": "Zapatillas Puma Graviton Pro ADP Unisex",
+      "price": "765.90",
+      "image": "https://sporting.vtexassets.com/arquivos/ids/1513774-1200-1200?v=638653724575700000&width=1200&height=1200&aspect=true",
+      "id": 47
+    },
+    {
+      "name": "Zapatillas Puma Skyrocket Lite De Hombre",
+      "price": "675.99",
+      "image": "https://sporting.vtexassets.com/arquivos/ids/1509556-1200-1200?v=638653075694230000&width=1200&height=1200&aspect=true",
+      "id": 48
     }
   ]
 }
