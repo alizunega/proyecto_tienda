@@ -63,7 +63,7 @@ function mostrarMasItems() {
   let itemsMostrados = 12; // Inicialmente mostramos 10
 
   // hay elementos en lista y son mas de 10
-  if (items.length !== 0 && items.length > 12) {
+  if (items.length > 12) {
     verMasBtn.style.display = "flex";
   }
 
