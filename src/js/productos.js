@@ -62,7 +62,10 @@ function mostrarMasItems() {
   const verMasBtn = document.querySelector(".button-ver-mas");
   let itemsMostrados = 12; // Inicialmente mostramos 10
 
-  // hay elementos en lista y son mas de 10
+  // hay elementos en lista y son mas de 12
+  if (items.length < itemsMostrados) {
+    verMasBtn.style.display = "none";
+  }
   if (items.length > 12) {
     verMasBtn.style.display = "flex";
   }
