@@ -1,6 +1,8 @@
 import { conectionAPI } from "./conectionAPI.js";
 
 const main = document.querySelector(".main");
+const section = document.querySelector(".container");
+const botonAdd = document.querySelector(".boton-add");
 
 const listaAPI = await conectionAPI
   .conexionAPI()
@@ -11,8 +13,6 @@ const listaAPI = await conectionAPI
     console.log(error.message);
     main.innerHTML = `<h1> No se pudo realizar la conexión</h1>`;
   });
-
-const section = document.querySelector(".container");
 
 renderizarItems(listaAPI);
 
@@ -60,10 +60,10 @@ function renderizarItems(lista) {
 function mostrarMasItems() {
   const items = document.querySelectorAll(".card");
   const verMasBtn = document.querySelector(".button-ver-mas");
-  let itemsMostrados = 10; // Inicialmente mostramos 10
+  let itemsMostrados = 12; // Inicialmente mostramos 10
 
-  // si hay elementos en la lista, muestra el boton
-  if (items.length !== 0) {
+  // hay elementos y mas de 10
+  if (items.length > 12) {
     verMasBtn.style.display = "flex";
   }
 
@@ -213,7 +213,7 @@ if (section) {
 }
 
 // funcion para buscar segun palabra clave
-const botonAdd = document.querySelector(".boton-add");
+
 const botonBuscar = document.querySelector("#botonBuscar");
 const inputBusqueda = document.getElementById("search-item");
 
