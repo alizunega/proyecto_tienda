@@ -48,7 +48,7 @@ En este desafío desarrollamos una aplicación para listar (muestra una lista de
 
 `cd proyecto_tienda`
 
-3- Instala dependencias necesarias segun `package.json`.
+3- Instala dependencias necesarias segun `package.json`
 
 `npm install`
 
@@ -72,7 +72,7 @@ Es importante destacar que, aunque estés ejecutando la página desde tu entorno
 
 En ese caso el paso 6 no será necesario.
 
-9- Consideración especial: si trabajas en la rama `main` no funcionará correctamente, recomiendo usar develop para trabajar en local. `main` es exclusivo para entorno de producción.
+9- Consideración especial: si trabajas en la rama `main` no funcionará correctamente, recomiendo usar `develop` para trabajar en local. `main` es exclusivo para entorno de producción.
 
 ## Estructura de carpetas :open_file_folder:
 
