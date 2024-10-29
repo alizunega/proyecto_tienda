@@ -129,7 +129,7 @@ a {
 }
 
 .acciones--item {
-    border: solid .2em rgb(246, 4, 4);
+    border: solid .2em rgb(231, 173, 251);
     padding: .4em .5em;
     margin: .8em auto;
 }
@@ -215,7 +215,7 @@ section.container {
 }
 
 .card {
-    background-color: rgb(228, 226, 226);
+    /* background-color: rgb(228, 226, 226); */
     margin: .8em auto;
     padding: .6em .9em;
     height: auto;
@@ -226,6 +226,8 @@ section.container {
     align-items: center;
     width: 80%;
     display: none;
+    background: linear-gradient(135deg, #3498dbba 50%, #bd67fab2 50%);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .card.show {
