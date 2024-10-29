@@ -60,8 +60,16 @@ function renderizarItems(lista) {
 function mostrarMasItems() {
   const items = document.querySelectorAll(".card");
   const verMasBtn = document.querySelector(".button-ver-mas");
+  const cantItems = document.querySelector(".cant-items");
   let itemsMostrados = 12; // Inicialmente mostramos 10
+  if (items.length !== 0) {
+    cantItems.textContent = `Se mostrarán ${items.length} productos`;
+  }
 
+  if (items.length < itemsMostrados) {
+    verMasBtn.style.display = "none";
+    cantItems.textContent = `Se muestran en total ${items.length} productos`;
+  }
   // hay elementos y mas de 10
   if (items.length > 12) {
     verMasBtn.style.display = "flex";
@@ -85,6 +93,7 @@ function mostrarMasItems() {
     if (itemsMostrados >= items.length) {
       // Oculta el botón si ya no hay más ítems
       verMasBtn.style.display = "none";
+      cantItems.textContent = `Total: ${items.length} productos`;
     }
   });
 }

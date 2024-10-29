@@ -287,6 +287,11 @@ img.icono-button {
     padding-right: 1.5em;
 }
 
+.cant-items {
+    text-align: center;
+    padding-bottom: 1em;
+}
+
 /* Fin Estilos grilla productos */
 
 /* Estilos formulario carga productos */
