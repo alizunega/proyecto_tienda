@@ -1,5 +1,3 @@
-// funcion busqueda de un producto segun palabra clave
-
 // mostrar formulario de carga de productos
 function mostrarFormulario() {
   window.location.href = "./pages/formulario.html";
@@ -7,5 +5,9 @@ function mostrarFormulario() {
 
 const addProducto = document.getElementById("addProducto");
 if (addProducto) {
-  addProducto.addEventListener("click", mostrarFormulario);
+  addProducto.addEventListener("click", function (e) {
+    e.preventDefault();
+    e.stopPropagation();
+    mostrarFormulario();
+  });
 }

@@ -43,43 +43,31 @@ async function addProduct(name, price, image) {
 }
 
 // Función para realizar la solicitud DELETE
-// Función para verificar si el item existe segun id
-async function itemExists(id) {
-  const response = await fetch(url + `/${id}`);
-  if (response.ok) {
-    return true; // El item existe
-  } else {
-    return false; // El item no existe
-  }
-}
 
 // Función para realizar eliminacion
-async function deleteItem(id) {
-  try {
-    const exists = await itemExists(id); // Verificar si el item existe
-    if (!exists) {
-      alert(`El elemento con ID ${id} no existe`);
-      return; // Salir de la función si no existe
-    }
+// conectionAPI.js
 
-    const response = await fetch(url + `/${id}`, {
+async function deleteItem(idProd) {
+  try {
+    const response = await fetch(url + `/${idProd}`, {
       method: "DELETE",
       headers: {
         "Content-Type": "application/json",
       },
     });
 
-    if (response.ok) {
-      alert(`Elemento eliminado con éxito`);
-    } else {
-      alert(`Error ${response.status}: ${response.statusText}`);
+    if (!response.ok) {
+      throw new Error("Error al eliminar el producto");
     }
+
+    return true;
   } catch (error) {
-    alert("Hubo un error con la solicitud: " + error);
+    console.error("Error en deleteItem:", error);
+    throw new Error("Error: ", error);
   }
 }
-// Funcion para buscar un producto segun palabra clave
 
+// Funcion para buscar un producto segun palabra clave
 async function searchProduct(key) {
   try {
     let response = await fetch(url);

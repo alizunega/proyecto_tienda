@@ -7,40 +7,16 @@
       "image": "https://imgcentauro-a.akamaihd.net/230x230/94313762.jpg"
     },
     {
-      "id": 2,
-      "name": "Tenis Nike Revolution 5",
-      "price": 249.99,
-      "image": "https://imgcentauro-a.akamaihd.net/230x230/94313762.jpg"
-    },
-    {
       "id": 3,
       "name": "Tenis Nike Revolution 5",
       "price": 249.99,
       "image": "https://imgcentauro-a.akamaihd.net/230x230/943137XQ.jpg"
     },
     {
-      "id": 4,
-      "name": "Tenis Asics Patriot 12 Noosa",
-      "price": 199.99,
-      "image": "https://imgcentauro-a.akamaihd.net/230x230/95077714.jpg"
-    },
-    {
-      "id": 5,
-      "name": "Tenis Asics Patriot 12 Noosa",
-      "price": 199.99,
-      "image": "https://imgcentauro-a.akamaihd.net/230x230/9507779N.jpg"
-    },
-    {
       "id": 6,
       "name": "Tenis Oakley Modoc Low 3.0",
       "price": 449.99,
       "image": "https://imgcentauro-a.akamaihd.net/230x230/92601102.jpg"
-    },
-    {
-      "id": 7,
-      "name": "Tenis Nike Renew Run",
-      "price": 279.99,
-      "image": "https://imgcentauro-a.akamaihd.net/230x230/9465450R.jpg"
     },
     {
       "id": 8,
@@ -61,22 +37,10 @@
       "image": "https://imgcentauro-a.akamaihd.net/230x230/92456602.jpg"
     },
     {
-      "id": 11,
-      "name": "Tenis Infantil Nike Flex Runner",
-      "price": 279.99,
-      "image": "https://imgcentauro-a.akamaihd.net/230x230/94461431.jpg"
-    },
-    {
       "id": 12,
       "name": "Tenis Infantil Nike Flex Runner",
       "price": 279.99,
       "image": "https://imgcentauro-a.akamaihd.net/230x230/94461431.jpg"
-    },
-    {
-      "id": 13,
-      "name": "Tenis Nike Revolution 5",
-      "price": 249.99,
-      "image": "https://imgcentauro-a.akamaihd.net/230x230/943137X8.jpg"
     },
     {
       "id": 14,
@@ -95,18 +59,6 @@
       "name": "Tenis Asics Patriot 12",
       "price": 199.99,
       "image": "https://imgcentauro-a.akamaihd.net/230x230/95150929.jpg"
-    },
-    {
-      "id": 17,
-      "name": "Tenis Asics Gel-Pacemaker",
-      "price": 299.99,
-      "image": "https://imgcentauro-a.akamaihd.net/230x230/95870805.jpg"
-    },
-    {
-      "id": 18,
-      "name": "Tenis Mizuno Wave Prophecy X",
-      "price": 1299.99,
-      "image": "https://imgcentauro-a.akamaihd.net/230x230/95707805.jpg"
     },
     {
       "id": 19,
@@ -181,12 +133,6 @@
       "image": "https://imgcentauro-a.akamaihd.net/230x230/94218131.jpg"
     },
     {
-      "id": 32,
-      "name": "Tenis Mizuno Wave Prophecy X",
-      "price": 1299.99,
-      "image": "https://imgcentauro-a.akamaihd.net/230x230/95707858.jpg"
-    },
-    {
       "id": 33,
       "name": "Tenis adidas Lite Racer 2.0",
       "price": 179.99,
@@ -235,12 +181,6 @@
       "id": 41
     },
     {
-      "name": "Tenis Asics Patriot 12 Noosa",
-      "price": "587",
-      "image": "https://imgcentauro-a.akamaihd.net/230x230/95077714.jpg",
-      "id": 42
-    },
-    {
       "name": "Tenis Nike Revolution 5",
       "price": "876.99",
       "image": "https://imgcentauro-a.akamaihd.net/230x230/943137XQ.jpg",
@@ -269,12 +209,6 @@
       "price": "675.99",
       "image": "https://sporting.vtexassets.com/arquivos/ids/1509556-1200-1200?v=638653075694230000&width=1200&height=1200&aspect=true",
       "id": 48
-    },
-    {
-      "name": "nombre",
-      "price": "76.9",
-      "image": "http://unaurlfalsa.com",
-      "id": 49
     }
   ]
 }

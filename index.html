@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
@@ -33,13 +33,29 @@
     </header>
     <main class="main">
         <h1>MIS PRODUCTOS</h1>
+        <!-- seccion contenedor de productos -->
         <section class="container">
 
         </section>
-
+        <!--  boton para ver mas -->
         <button class="button-ver-mas" hidden><img src="./assets/iconos/add_item.png" alt="ver mas"
                 class="icono-button">Ver Más</button>
+        <!-- cantidad de items -->
         <span class="cant-items"></span>
+        <!-- popup -->
+        <div class="popup--container" hidden>
+            <div class="popup" id="popup">
+                <h3>Confirmación</h3>
+                <p>¿Desea eliminar el item?</p>
+                <button id="confirm">Eliminar</button>
+                <button id="cancel">Cancelar</button>
+            </div>
+            <div class="popup" id="popupok" hidden>
+                <h3>Felicitaciones</h3>
+                <p>El item se eliminó correctamente</p>
+                <button type="button" id="close">Cerrar</button>
+            </div>
+        </div>
     </main>
     <footer class="footer">
         <span>&copy; 2024 - Desarrollado por Alicia</span>
@@ -56,10 +72,11 @@
                 </a>
             </li>
         </ul>
+    </footer>
 
 
-        <script src="./src/js/main.js"></script>
-        <script src="./src/js/productos.js" type="module"></script>
+    <script src="./src/js/main.js"></script>
+    <script src="./src/js/productos.js" type="module"></script>
 </body>
 
 </html>

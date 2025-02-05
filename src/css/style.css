@@ -294,6 +294,55 @@ img.icono-button {
     padding-bottom: 1em;
 }
 
+.popup--container {
+    background-color: rgba(249, 247, 247, 0.468);
+    justify-items: center;
+    align-content: center;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 1em 1.2em;
+    line-height: 2em;
+    font-size: 1.3em;
+}
+
+#popup {
+    background-color: #fcfafe;
+    border: solid .4em #4c4b4b;
+    padding: .8em 1em;
+    text-align: center;
+    width: 20em;
+    height: auto;
+    border-radius: .8em;
+}
+
+#popup button {
+    padding: .7em .9em;
+    border-radius: .5em;
+    background-color: #9a6ae2db;
+}
+
+#popupok {
+    background-color: #fcfafe;
+    border: solid .4em #4c4b4b;
+    padding: .8em 1em;
+    text-align: center;
+    width: 30em;
+    height: auto;
+    border-radius: .8em;
+    flex-direction: column;
+}
+
+#popupok button {
+    padding: .7em .9em;
+    border-radius: .5em;
+    background-color: #9a6ae2db;
+    width: 50%;
+    align-self: center;
+}
+
 /* Fin Estilos grilla productos */
 
 /* Estilos formulario carga productos */

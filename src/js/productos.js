@@ -4,15 +4,10 @@ const main = document.querySelector(".main");
 const section = document.querySelector(".container");
 const botonAdd = document.querySelector(".boton-add");
 
-const listaAPI = await conectionAPI
-  .conexionAPI()
-  .then((response) => {
-    return response;
-  })
-  .catch((error) => {
-    console.log(error.message);
-    main.innerHTML = `<h1> No se pudo realizar la conexión</h1>`;
-  });
+const listaAPI = await conectionAPI.conexionAPI().catch((error) => {
+  console.log(error.message);
+  main.innerHTML = `<h1> No se pudo realizar la conexión</h1>`;
+});
 
 renderizarItems(listaAPI);
 
@@ -195,28 +190,6 @@ function mostrarError(span, mensaje, mostrar) {
   }
 }
 
-// Funcion eliminacion del producto
-// Agrega un evento de click al contenedor
-if (section) {
-  section.addEventListener("click", async (event) => {
-    // Verifica si el elemento clicado es un botón de eliminar
-    if (event.target.classList.contains("delete")) {
-      const card = event.target.closest(".card"); // Encuentra el elemento card más cercano
-      const idProd = card.dataset.id; // Obtén el id del producto
-      const indLista = listaAPI.findIndex((producto) => producto.id == idProd);
-      console.log(`idProd es ${idProd} y indLista es ${indLista}`);
-      if (indLista !== -1) {
-        //muestra mensaje de error para desprevenidos
-        if (confirm("¿Está seguro que desea eliminar?")) {
-          await conectionAPI.deleteItem(idProd);
-          listaAPI.splice(indLista, 1);
-          card.remove(); // Remueve la tarjeta del DOM
-        }
-      }
-    }
-  });
-}
-
 // funcion para buscar segun palabra clave
 
 const botonBuscar = document.querySelector("#botonBuscar");
@@ -332,4 +305,103 @@ if (mensaje === "ok") {
         Agregar otro producto
     </a>
 </div>`;
+}
+
+// Funcion eliminacion del producto
+// Agrega un evento de click al contenedor
+const popupContainer = document.querySelector(".popup--container");
+const popup = document.getElementById("popup");
+const popupok = document.getElementById("popupok");
+const btnConfirm = document.getElementById("confirm");
+const btnCancel = document.getElementById("cancel");
+
+if (section) {
+  section.addEventListener("click", async (event) => {
+    // Verifica si el elemento clicado es un botón de eliminar
+    if (event.target.classList.contains("delete")) {
+      const card = event.target.closest(".card"); // Encuentra el elemento card más cercano
+      const idProd = card.dataset.id; // obtiene el id del producto seleccionado
+      const indLista = listaAPI.findIndex((producto) => producto.id == idProd);
+      console.log(`idProd es ${idProd} y indLista es ${indLista}`);
+      //existe un elemento que coincide
+      if (indLista !== -1) {
+        //muestra popup para confirmar
+        popupContainer.style.display = "inline";
+
+        if (btnCancel && btnConfirm) {
+          // manejo del boton - confirma la eliminacion
+          // btnConfirm.addEventListener("click", async (event) => {
+          //   event.preventDefault();
+          //   event.stopPropagation();
+          //   try {
+          //     console.log("va a api a eliminar el item");
+
+          //     await conectionAPI.deleteItem(idProd);
+          //     // mostrara el popUpok antes
+          //     console.log("mostrara el popUp de exito");
+          //     popup.style.display = "none";
+          //     popupok.style.display = "flex";
+          //     // toma el boton close
+          //     console.log("cuando le de click a cerrar eliminara");
+          //     const btnClose = document.getElementById("close");
+
+          //     btnClose.addEventListener("click", function (e) {
+          //       e.preventDefault();
+          //       e.stopPropagation();
+          //       console.log("eliminara item en api");
+          //       listaAPI.splice(indLista, 1);
+          //       console.log("eliminara item en dom");
+          //       card.remove();
+          //       popupok.style.display = "none";
+          //       popupContainer.style.display = "none";
+          //     });
+          //   } catch (error) {
+          //     console.log("mostrara popUp de fallo");
+          //     popupok.innerHTML = `<h2>Error al eliminar</h2><p>El item no pudo ser eliminado</p>`;
+          //     popupok.style.display = "inline-flex";
+          //   }
+          // });
+          btnConfirm.addEventListener("click", async (event) => {
+            event.preventDefault();
+            event.stopPropagation();
+            try {
+              console.log("va a api a eliminar el item");
+
+              // Llamada a deleteItem y espera a que se complete
+              await conectionAPI.deleteItem(idProd);
+
+              // Ahora mostramos el popup de éxito
+              popup.style.display = "none"; // Oculta el popup de confirmación
+              popupok.style.display = "flex"; // Muestra el popup de éxito
+
+              // Manejo del botón cerrar
+              const btnClose = document.getElementById("close");
+              btnClose.onclick = function (e) {
+                e.preventDefault();
+                e.stopPropagation();
+
+                // Eliminar el item de la lista local y del DOM
+                listaAPI.splice(indLista, 1);
+                card.remove();
+
+                // Ocultar el popup de éxito
+                popupok.style.display = "none";
+                popupContainer.style.display = "none";
+              };
+            } catch (error) {
+              console.log("mostrara popUp de fallo");
+              popupok.innerHTML = `<h2>Error al eliminar</h2><p>El item no pudo ser eliminado</p>`;
+              popupok.style.display = "inline-flex";
+            }
+          });
+
+          // manejo del boton - cancela la eliminacion
+          btnCancel.addEventListener("click", () => {
+            console.log("no quiso eliminar :(");
+            popupContainer.style.display = "none";
+          });
+        }
+      }
+    }
+  });
 }
